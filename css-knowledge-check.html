@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knowledge Check - CSS</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src=""></script>
+
+</head>
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#basics">CSS Basics</a></li>
+            <li><a href="#block-inline">Block & Inline Elements</a></li>
+            <li><a href="#resets">CSS Resets</a></li>
+            <li><a href="#units">CSS Units</a></li>
+            <li><a href="#text">Text Styles</a></li>
+            <li><a href="#properties">More CSS Properties</a></li>
+            <li><a href="#selectors">More Selectors</a></li>
+            <li><a href="#positioning">Positioning</a></li>
+            <li><a href="#functions">CSS Functions</a></li>
+            <li><a href="#custom">Custom Properties</a></li>
+            <li><a href="#frameworks">Frameworks & Preprocessors</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
+    </div>
+
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - CSS</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <main id="answers" class="container">
+        <hr>
+
+        <section id="basics">
+            <h2> CSS Basics</h2>
+            <h3>What are the main differences between external, internal, and inline CSS?</h3>
+            <p><strong>External CSS</strong>, where the css file is linked to in the <code>head</code>, can be used to
+                style
+                multiple pages
+                linked to one
+                CSS file, so it can serve as the style rules
+                for multiple pages.<br>
+                <strong>Internal CSS</strong>, where the css is contained within a <code>style</code> tag in the
+                <code>head</code>, can be
+                used to style
+                the elements on that page only.<br>
+                <strong>Inline CSS</strong>, where styles are defined within an element's tag, can only be used to style
+                individual elements
+                one at a time.
+            </p>
+            <h3>What is the syntax for class and ID selectors?</h3>
+            <p>Class selectors are accessed using <code>.classname</code> and ID selectors are accessed using
+                <code>#idname</code>.
+            </p>
+            <h3>How would you apply a single rule to two different selectors?</h3>
+            <p>You can apply the same rule to multiple elements by putting a comma between them
+            <pre>
+                <code>.firstclass, .secondclass {
+                    color: #FF0000;
+                    }</code></pre>
+            This will apply the color to both the .firstclass and .secondclass.
+            </p>
+            <h3>Given an element that has an id of title and a class of primary, how would you use both attributes for a
+                single rule?</h3>
+            <p>You can chain the selectors together to apply one rule:
+            <pre>
+                <code>#title.primary {
+                    color: #000000;
+                    }</code></pre>
+            This will only select the element that has both the #title id and the .primary class.
+            </p>
+            <h3>What does the descendant combinator do?</h3>
+            <p>The descendant combinator can select an element that is the child or descendant of a specific parent or
+                ancestor.
+            <pre><code>.parent .child {
+                color: #FF000;
+                } </code></pre>
+            The ancestor goes first, then a
+            space, then the descendant.
+            </p>
+            <div class="list-container">
+                <ul>
+                    <li>descendant selector (space)</li>
+                    <li>child selector (>)</li>
+                    <li>adjacent sibling selector (+)</li>
+                    <li>general sibling selector (~)</li>
+                </ul>
+            </div>
+            <p>
+            <h3>Between a rule that uses one class selector and a rule that uses three type selectors, which rule has
+                the
+                higher specificity?</h3>
+            <p>The class selector rule would be applied first as it takes precedence over any number of type selectors.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="block-inline">
+            <h2>Block and Inline Elements</h2>
+            <h3>What is the difference between a block element and an inline element?</h3>
+            <p>A block element will break normal flow and always sit on its own line, where an inline element will
+                remain in
+                the normal flow of the page.</p>
+            <h3>What is the difference between an inline element and an inline-block element?</h3>
+            <p>An inline element can only have its width adjusted, where an inline-block element can adjust both width
+                and
+                height.</p>
+            <h3>What does the <code>box-sizing</code> css property do?</h3>
+            <p>The box-sixing property can affect whether the width and height of an element refer to its contents only,
+                or
+                also include the padding.</p>
+            <h3>Is an <code>h1</code> block or inline?</h3>
+            <p>H1, h2, and all other header elements are block elements.</p>
+            <h3>Is <code>span</code> block or inline?</h3>
+            <p>Span is an inline element.</p>
+            <h3>Is <code>button</code> block or inline?</h3>
+            <p>Buttons are block elements.</p>
+            <h3>Is <code>div</code> block or inline?</h3>
+            <p>Divs are block elements.</p>
+            <h3>Would you use <code>margin</code> or <code>padding</code> to create more space between 2 elements?</h3>
+            <p>Margins affect the space between elements.</p>
+            <h3>Would you use <code>margin</code> or <code>padding</code> to create more space between the contents of
+                an
+                element and its border?</h3>
+            <p>Padding affects the space between an elements contents and its border.</p>
+        </section>
+
+        <hr>
+
+        <em>Added from intermediate HTML & CSS:</em>
+
+        <section id="resets">
+            <h2>CSS Resets</h2>
+            <h3>Why would you want to use a CSS reset?</h3>
+            <p>CSS resets are used to override the various browsers' default styles so that a website looks the same on
+                different browers.</p>
+        </section>
+
+
+        <section id="units">
+            <h2>CSS Units</h2>
+            <h3>Why would you want to use <code>em</code> or <code>rem</code> for font-size instead of px?</h3>
+            <p>I would not use <code>em</code> for font size, because each nested element using <code>em</code> could
+                end up
+                getting bigger and bigger. I would use <code>rem</code> as the font size would remain consistent to the
+                body
+                font size, and would be more responsive than using <code>px</code>.</p>
+            <h3>What are some instances where you might want to use <code>vh</code> and <code>vw</code>?</h3>
+            <p>These units are good for setting the size of elements relative to the size of the viewport, such as a
+                hero
+                section or even sidebar.</p>
+            <h3>What are some instances where you might want to use <code>px</code> instead of a relative unit?</h3>
+            <p>It could be beneficial to use <code>px</code> for padding and margin for smaller elements such as buttons
+                or
+                small card-like components, but I would use <code>em</code> for larger elements to keep the space
+                consistent
+                with the element font size.</p>
+        </section>
+
+        <hr>
+
+        <section id="text">
+            <h2>Text Styles</h2>
+            <h3>What are the 2 ways to add fonts that are not installed on a user's computer?</h3>
+            <p>The easiest way is to use an external API such as Google Fonts, where the font can be linked in the head
+                of
+                the HTML or imported into the first line of CSS.<br>
+                Another way - which often loads faster - is to download a font and import it into your CSS via url using
+                <code>@font-face</code>.
+            <pre><code>@font-face {
+            font-family: cool-font;
+            src: url(../fonts/cool-font-file.woff);
+                  }</code></pre>
+            </p>
+            <h3>What is the "system font stack" and why would you want to use it?</h3>
+            <p>The system font stack lists several common fonts, and the browser will display the first one the user has
+                installed
+                on their computer. This is a good way to avoid using the brower's default font, which may not match your
+                design.</p>
+            <h3>Which property would you use to increase or decrease the space between letters in a word?</h3>
+            <p>To increase the space between letters in a word, use the <code>letter-spacing</code> property.</p>
+            <h3>Which property would you use to increase or decrease the space between lines in a paragraph?</h3>
+            <p>To increase the space between lines of text vertically, use the <code>line-height</code> property.</p>
+        </section>
+
+        <hr>
+
+        <section id="properties">
+            <h2>More CSS Properties</h2>
+            <h3>Which property would you use to make an element transparent?</h3>
+            <p>
+                The <code>opacity</code> property is used to make an element transparent, for example
+                <code>opacity: 0.5;</code> would make an element 50% opaque.
+            </p>
+            <h3>Which property would you use to make a background image tile?</h3>
+            <p>
+                To make a background image tile, add <code>repeat</code> to the <code>background</code> shorthand
+                property,
+                or set it
+                specifically using
+                <code>background-repeat: repeat</code>. Setting <code>background-repeat: no-repeat</code> will prevent
+                the
+                background image from tiling.
+            </p>
+            <h3>Which property would you use to add scrollbars to an element?</h3>
+            <p>If the content of an element is overflowing it's container, use <code>overflow: scroll</code> to give the
+                container a scrollbar. This will apply on both the x and y axis.</p>
+            <h3>Which property would you use to add a shadow behind an element?</h3>
+            <p><code>box-shadow</code> is used to add a shadow behind an element; it typically is used with four values,
+                offset-x, offset-y, blur-radius, and a colour.e.g.
+                <code>2px 2px 4px black</code> would add 2px to the right, 2px to the bottom, and 4px of blur in
+                <code>black</code>. Using negative values would, for example, shift the offset-x to the left instead of
+                the
+                right.
+            </p>
+            <h3>Which property would you use to create rounded corners on an element?</h3>
+            <p>To round the corners of an element, use <code>border-radius</code>. Using this with a single value will
+                round
+                all corners to the same size, or all the corners can be set to different radius values.</p>
+            <h3>How would you use border-radius to make a circular element?</h3>
+            <p>To create a circular element, the element must be a square with the same height and width, then use
+                <code>border-radius: 50%</code> to round all the corners into a circle.
+            </p>
+        </section>
+
+        <hr>
+        <section id="selectors">
+
+            <h2>More Selectors</h2>
+            <h3>What is the difference between the child combinator and the descendant combinator?</h3>
+            <p>The child combinator selects the child of an element, the descendant combinator will select any further
+                children of that child.</p>
+            <h3>How does the syntax of pseudo-classes and pseudo-elements differ?</h3>
+            <p>Pseudo classes are targeted with one colon <code>:</code>, pseudo-elements are targeted with two colons
+                <code>::</code>.
+            </p>
+            <h3>Do pseudo-classes exist somewhere in HTML? Do pseudo-elements?</h3>
+            <p>Pseudo-classes do exist in HTML. Pseudo-elements do not, and are only generated by the CSS for display
+                purposes.</p>
+            <h3>Name two ways you could select every second child of an element, starting with the first.</h3>
+            <p>
+            <ol>
+                <li><code>element:nth-child(2)</code></li>
+                <li><code>element:nth-child(2n+1)</code></li>
+            </ol>
+            </p>
+            <h3>What is the difference between <code>div:first-child</code> and <code>div :first-child</code>? What will
+                each select?</h3>
+            <p>
+                <code>div:first-child</code> will select the first <code>div</code>.<br>
+                <code>div :first-child</code> will select the first element that is the child of a <code>div</code>.
+            </p>
+            <h3>What selector would you use to style a button a user is currently hovering over? How about one that is
+                currently being clicked on?</h3>
+            <p>Style a button that is being hovered over with <code>button:hover</code> and a button that is being
+                clicked
+                with <code>button:active</code>.</p>
+            <h3>How could you select all input elements with a type of text?</h3>
+            <p><code>input[type="text"]</code> will select every <code>input</code> with the attribute <code>type</code>
+                with a value
+                of <code>text</code>.</p>
+            <h3>How could you select all classes that begin with <code>thunder</code> ?</h3>
+            <p><code>class^="thunder"]</code>, where the caret (^) after the attribute targets any element
+                <em>beginning</em> with the characters that follow. Similarly <code>$</code> targets text that ends in
+                those
+                characters, and <code>*</code> will target the characters anywhere in the attribute.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="positioning">
+
+            <h2>Positioning</h2>
+            <h3>What is the difference between static and relative positioning?</h3>
+            <p>
+                Static is the default <code>position</code> property, these elements just follow the normal flow of the
+                html
+                document. <br>
+                Relative positioning also follows the normal flow, but an element with <code>position: relative</code>
+                can also be moved <em>relative to it's own position</em> in normal flow, without affecting the other
+                elements - they behave as if the element was still where it's supposed to be. Positioning is done the
+                the <code>top</code>, <code>left</code>, <code>bottom</code>, and <code>right</code> properties, set to
+                any value in
+                absolute or relative units eg 10px, 1em, etc.
+            </p>
+
+            <h3>What is absolute positioning useful for?</h3>
+            <p>
+                An element with <code>position: absolute</code> can be positioned relative to the next parent element
+                set to <code>position: relative</code> or <code>absolute</code>. If there isn't one, the element will be
+                positioned relative to the html element. These elements are removed from normal flow and other elements
+                will behave as if it was never there.
+            </p>
+
+            <h3>What is the difference between fixed and sticky positioning?</h3>
+            <p>
+                A fixed element is positioned relative to the viewport, and will stay in view even when the page is
+                scrolled. A sticky element will also stay in place, but only while it's parent is in view. Once the
+                parent has scrolled out of view, the sticky element will scroll away with it.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="functions">
+            <h2>CSS Functions</h2>
+
+            <h3>What are the four CSS math functions we covered above?</h3>
+            <div class="list-container">
+                <ul>
+                    <li><code>calc()</code>: for performing basic addition, subtraction, multiplication, and division.
+                        Can
+                        be used to dynamically size elements or fonts based on the size of other elements, or custom
+                        properties (variables).</li>
+                    <li><code>min()</code>: used for sizing an element or font, and can take several values in different
+                        units, e.g. <code>min(50%, 400px)</code>. As the browser is resized, <code>min()</code> will
+                        use whichever
+                        value is <strong>smallest</strong>.</li>
+                    <li><code>max()</code>: like <code>min()</code>, but will take whichever value is
+                        <strong>largest</strong>.
+                        <code>min()</code> and <code>max()</code> can both also perform basic math.
+                    </li>
+                    <li><code>clamp()</code>: takes three values - the minimum, ideal, and maximum. The element will
+                        never be smaller than it's lowest value, or larger than it's highest value. </li>
+                </ul>
+            </div>
+
+
+
+            <h3>How do we use CSS math functions in our CSS?</h3>
+            <p>
+                CSS math functions are primarily used for sizing, which can provide an alternative to using media
+                queries.
+            </p>
+
+            <h3>How can CSS functions help make websites and applications more responsive?</h3>
+            <p>CSS functions are useful for responsive design because sizing properties such as <code>height</code>,
+                <code>font-size</code>, <code>padding</code>, etc. can be calculated based on the size of other elements
+                or of the viewport, without having to hard-code all the properties.
+            </p>
+        </section>
+
+        <section id="custom">
+            <h2>Custom Properties</h2>
+
+            <h3>How would you declare a custom property with a name of text-color?</h3>
+            <p>First create a variable name, starting with two hyphens, and set it to any valid CSS value.</p>
+            <pre><code>
+            .class {
+                 --text-color: #000;
+            }
+                    </code></pre>
+
+            <h3>How would you access a custom property with a name of background-color?</h3>
+            <p>Access the custom property by calling the variable as a value to a CSS property.</p>
+            <pre><code>
+            .class {
+                background-color: var(--background-color);
+            }
+                </code></pre>
+
+            <h3>Where would you declare a custom property to have its scope be global and accessible by all other
+                selectors?</h3>
+            <p>To create a global custom property, create it in the <code>:root</code> element (which is similar to the
+                <code>html</code> element but with higher
+                precedence). To scope the custom property to a specific class or element, create it within that class or
+                element. It cannot be used anywhere else.
+            </p>
+
+            <h3>Where would you declare a custom property so that a user's theme setting from their OS or browser was
+                taken into account?</h3>
+            <p>A media query, such as <code>prefers-color-scheme</code>, which can detect if the user has dark mode
+                set and the custom property will be applied accordingly.
+            </p>
+        </section>
+
+        <section id="frameworks">
+            <h2>Frameworks & Preprocessors</h2>
+
+            <h3>What are some advantages of using a CSS framework?</h3>
+            <p>CSS frameworks such as Tailwind and Bootstrap make it quick and easy to code UI for websites and
+                applications, even
+                without design skills. They can also make it easy for a team to collaborate because everyone is using
+                the same code.</p>
+
+            <h3>What are some disadvantages of using a CSS framework?</h3>
+            <p>CSS frameworks can be difficult to debug, especially if you're using one because your own CSS skills are
+                not that strong. They can also be complicated to customise as the framework needs to be overrided.
+                Finally, frameworks can cause a lot of websites to look the same, if developers are all using the same
+                frameworks.</p>
+
+            <h3>What are some advantages of using a CSS preprocessor?</h3>
+            <p>CSS preprocessors such as Sass and Stylus can make it easy to write more powerful CSS using features such
+                as mixins, variables, and loops. One helpful feature is nesting your CSS meaning you don't have to worry
+                as much about knowing all the different kinds of selectors.<br>
+                Preprocessors also make your processed CSS code DRY-er, and more organised - meaning it is easier to
+                read and understand by other developers.</p>
+
+            <h3>What are some disadvantages of using a CSS preprocessor?</h3>
+            <p>The output CSS can be difficult to debug as it doesn't exactly match what was input.<br>
+                Having to learn and set up additional tools can take up too much extra time.<br>
+                CSS now includes solutions to some of the problems that preprocessors were invented to solve, such as
+                variables and mixins.<br>
+                Once a project has been built with a preprocessor, it can be difficult to remove it.
+            </p>
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

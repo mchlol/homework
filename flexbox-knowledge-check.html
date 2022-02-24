@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Check - Flexbox</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src=""></script>
+
+</head>
+
+<body>
+
+    <div id="header">
+        <h1 id="top">Knowledge Check - Flexbox</h1>
+        <a href="index.html">
+            < Home</a>
+    </div>
+
+    <section id="answers">
+        <h3>What are the 3 values defined in the shorthand <code>flex</code> property? (e.g.
+            <code>flex: 1 1 auto</code>)?
+        </h3>
+        <p>Flex grow, flex shrink, and flex basis (min, max, and ideal size). </p>
+        <p></p><code>flex: initial</code> is the same as
+        setting <code>flex: 0 1 auto</code>.
+        </p>
+
+        <h3>What is flex grow?</h3>
+        <p>Flex grow determines if the flex item can grow to fill the available space. If an item has a larger flex grow
+            property than the other items, it will be bigger.</p>
+
+        <h3>What is flex shrink?</h3>
+        <p>Flex shrink determines if the flex item can shrink when the container shrinks, and how much. If the flex
+            shrink property is larger on one item than the others, it will shrink more.</p>
+
+        <h3>What is flex basis?</h3>
+        <p>Flex basis sets the initial or ideal size of a flex item. If set to auto, it will look at the set height or
+            width, or the size of the content. If set to 100%, it will take up the entire space of the parent container,
+            either height or width depending on the main axis (row or column).
+        </p>
+
+        <h3>How do you make flex items arrange themselves vertically instead of horizontally?</h3>
+        <p>You can arrange flex items vertically instead of horizontally by changing the rule on the flex container to
+            <code>flex-direction: column</code>.
+        </p>
+
+        <h3>In a column flex-container, what does flex-basis refer to?</h3>
+        <p>Flex basis will refer to the height of the flex item.</p>
+
+        <h3>In a row flex-container, what does flex-basis refer to?</h3>
+        <p>Flex basis will refer to the width of the flex item.</p>
+        <h3>Why do the previous two questions have different answers?</h3>
+        <p>When flex direction is set to column, the main axis is vertical and the cross axis is horizontal. When
+            flex-direction
+            set to row, the main axis is horizontal and the cross axis is vertical.</p>
+
+        <h3>What is the difference between <code>justify-content</code> and <code>align-items?</code></h3>
+        <p>Justify-content will organise the items along the main axis, and align-items organises them along the cross
+            axis.</p>
+
+        <h3>How do you use flexbox to completely center a div inside a flex container?</h3>
+        <p>Use justify-content to center along the main axis and align-items to center along the cross axis.</p>
+
+        <h3>What’s the difference between justify-content: space-between and justify-content: space-around?</h3>
+        <p>Space-between will organise items with even space between them, and space-around will organise items with
+            even space between them AND on either side.</p>
+
+    </section>
+    <a href="#top">^ Top</a>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital@0;1&family=Nunito:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --dark: rgb(65, 105, 225);
+    --mid: rgb(115, 157, 255);
+    --pale: rgb(224, 231, 255);
+    --bg: rgb(255, 255, 255);
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Nunito', 'Arial', sans-serif;
+    line-height: 1.05;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding-bottom: .5em;
+    line-height: 2;
+}
+
+.list-container {
+    line-height: 1.5;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--dark);
+}
+
+
+h1, h2, h3, h4 {
+    color: var(--dark);
+   font-family:'Newsreader', 'Times New Roman', Times, serif;
+   font-weight: 900;
+} 
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+::selection {
+    background-color: gold;
+}
+
+
+pre, code {
+    background-color: var(--pale);
+}
+
+pre {
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+
+strong {
+    text-decoration-color:var(--dark);
+    font-weight: bold;
+    text-decoration-line:underline;
+    text-decoration-style: dashed;
+}
+
+#more {
+    display: none;
+}
+
+.top-btn {
+    font-family: 'Newsreader', Georgia, 'Times New Roman', Times, serif;
+    padding: 10px;
+    background-color: var(--dark);
+    border: none;
+    font-size: 1rem;
+    border-radius: 2em;
+    color: #fff;
+    margin: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#div-example {
+    width: 100px;
+    height: auto;
+    background-color: silver;
+}
+
+hr {
+    border: none;
+    border-bottom: 2px dashed var(--dark);
+    margin: 3em 0 3em 0;
+}
+
+nav {
+    background-color: var(--mid);
+    border: 1px dashed var(--dark);
+    padding: .5em;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em;
+    display: flex;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    padding: 1em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+nav h3 {
+    color: #fff;
+    text-align: center;
+}
+
+nav a {
+    text-decoration-line:underline;
+    text-decoration-style: wavy;
+    color:var(--pale);  
+}
+
+h2:before {
+    font-family: "Material Icons";
+    content: "\E157";
+}
+
+.home-link {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: overline;
+    text-decoration-style: wavy;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+
+section h2 {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}

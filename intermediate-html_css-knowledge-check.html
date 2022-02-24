@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Check - Intermediate HTML & CSS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src=""></script>
+
+</head>
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#forms">Form Basics</a></li>
+            <li><a href="#validation">Form Validation</a></li>
+            <li><a href="#svg">SVG</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#browser">Browser Compatibility</a></li>
+        </ul>
+    </nav>
+
+    <header class="container">
+        <h1 id="top">Knowledge Check - Intermediate HTML & CSS</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </header>
+
+    <main id="answers" class="container">
+
+        <hr>
+        <section id="emmett">
+            <h2>Emmet</h2>
+            <h3>Why should you use Emmet?</h3>
+            <p>Using Emmet abbreviations can help you to write code faster and increase your productivity.</p>
+
+            <h3>What are some useful Emmet abbreviations?</h3>
+            <p>
+            <ul>
+                <li>Wrap with abbreviation: my shortcut is <strong>cmd+w+r</strong></li>
+                <li>Remove tag: my shortcut is <strong>cmd+r+m</strong></li>
+            </ul>
+            </p>
+
+            <h3>What syntax would you use to create this element:</h3>
+            <code>&lt;p class="text"&gt;&lt;/p&gt;</code>
+            <p>
+                <strong>p.text</strong>: where <strong> p </strong> is the element to be created, <strong> . </strong>
+                indicates
+                the following text is the class name, and <strong>text</strong> is the class name.
+            </p>
+
+            <h3>What syntax expands to an element with a child element inside of it?</h3>
+            For example:
+            <pre><code>
+        &lt;div&gt;
+            &lt;p&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    </code></pre>
+            <p>
+                <strong>div>p</strong>: where <strong>div</strong> is the parent element, <strong> > </strong> indicates
+                the
+                following element is a child of that parent element, and <strong> p </strong> is the child element.
+
+            </p>
+
+            <h3>What syntax would you use to create three elements that have the same class name?</h3>
+            <p>
+                <strong>p.text*3</strong>: where<strong> p </strong>is the element to be created, <strong>text</strong>
+                is
+                the class name,<strong> * </strong>indicates the following number is the amount of elements we want to
+                create, and <strong>3</strong> is the number of elements to be created.
+            </p>
+
+            <h3>Create an unordered list with a class of "list" inside a div with a class of "container"</h3>
+            <p>
+                <code>.container>ul.list>li*3</code>
+            </p>
+
+            <pre><code>
+&lt;div class="container"&gt;
+    &lt;ul class="list"&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+            </aside>
+        </section>
+        <hr>
+
+        <section id="forms">
+            <h2>Form Basics</h2>
+
+            <h3>Explain what the form element is for and what two attributes it should always include.</h3>
+            <p>
+                The form element is used to collect data from a user, such as leaving comments on a blog, filling out a
+                survey, signing up to an email list, or taking payment on an e-commerce site.<br>
+                The form must include an <code>action</code> attribute to determine where the data is sent, usually a
+                url,
+                and a
+                <code>method</code> element to determine how the data is sent - usually GET to retrieve data from the
+                server, or POST to send data to the server.
+            </p>
+
+            <h3>Explain what form controls are at a high level.</h3>
+            <p>
+                Form controls are elements in the form that the user interacts with to provide specific data - these can
+                be
+                input elements such as number, email, or telephone numbers, or selection inputs where some data is
+                provided
+                for the user to choose from, such as radio buttons, checkboxes, ranges, and even color-pickers or dates.
+            </p>
+
+            <h3>What is the name attribute for?</h3>
+            <p>
+                The name attribute provides the data with a reference, so when the data is sent to the server it can be
+                identified with the relevant label.
+            </p>
+
+            <h3>What are the three most common form controls you can use for allowing users to select predefined
+                options?
+            </h3>
+            <p>
+            <ul>
+                <li><code>checkbox</code>, which allow the user to select one or more from a range of items, displayed
+                    as
+                    boxes to be checked.</li>
+                <li><code>radio</code>, which provides a short selection of items displayed as circles for the user to
+                    choose only one of.</li>
+                <li><code>select</code>, like <code>radio</code> the user can only select one item, but this is used for
+                    a
+                    longer
+                    list of options displayed as a dropdown menu.</li>
+            </ul>
+            </p>
+
+            <h3>What are the three types of buttons in html?</h3>
+            <p>
+            <ul>
+                <li><strong>Reset</strong> - clears all the data a user has entered into the form's inputs.</li>
+                <li><strong>Submit</strong> - submits the form's data to the provided <code>action</code>.</li>
+                <li><strong>Anonymous</strong> - a generic button that can do anything, usually DOM related using
+                    JavaScript.</li>
+            </ul>
+            </p>
+
+            <h3>What are the two most challenging aspects of styling forms?</h3>
+            <p>
+                One is that most input elements use native browser styling, and it can be difficult to remove these
+                default
+                styles and re-style them while remaining consistent across different browsers (and be accessible).<br>
+                The other is that some elements cannot be styled with CSS at all, such as <code>color-picker</code> or
+                <code>date-time-local</code> and the only way around this is to use
+                JavaScript (however, many libraries are available for this).<br>
+                Another tricky thing to remember is that padding and margin affect
+                the inside of the input elements instead of the space around them. Putting the inputs inside
+                <code>div</code> or <code>li</code> elements can get around this.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="validation">
+            <h2>Form Validation</h2>
+
+            <h3>What does the required validation do?</h3>
+            <p>The <code>required</code> validation lets the user know the field must be filled in, or the form will not
+                submit.</p>
+
+            <h3>What validations can you use for checking text length?</h3>
+            <p>
+                <code>minlength</code> and <code>maxlength</code>
+            </p>
+
+            <h3>How can you validate the minimum and maximum of numeric inputs?</h3>
+            <p>
+                <code>min</code> and <code>max</code>
+            </p>
+
+            <h3>What can you use the pattern validation for?</h3>
+            <p>Pattern validation via regex can be used to ensure the user enters the correct information, such as a
+                valid
+                credit card
+                number, or creating a strong password.</p>
+
+            <h3>What pseudo css selectors are available for styling valid and invalid inputs?</h3>
+            <p>
+                <code>:valid</code> and <code>:invalid</code>
+            </p>
+
+            <hr>
+
+            <h2>SVG</h2>
+
+            <h3>What is the xmlns attribute?</h3>
+            <p>
+                <code>xmlns</code> stands for <strong>xml (extensible markup language) name-space</strong>, which
+                specifies
+                how the elements markup should be interpreted.
+            </p>
+
+            <h3>What are some situations where you wouldn't want to use SVG?</h3>
+            <p>SVG is a vector format so perfect for simple lines and shapes such as icons, charts, line drawings, and
+                text.
+                It is not suitable for images with a lot of data such as photos.</p>
+
+            <h3>What are the benefits of “inlining” your SVGs? What are the drawbacks?</h3>
+            <p>
+                <strong>Inlining</strong> SVG files means that the file can be accessed through the DOM with CSS and
+                JavaScript, eg. to animate, or change colours. However, large SVG files can make your page load slowly,
+                be
+                harder to cache, and harder for a human to read your HTML.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="tables">
+            <h2>Tables</h2>
+
+            <h3>What is a table?</h3>
+            <p>
+                A table is used to structure data into an easily readable and referenceable format.
+            </p>
+
+            <h3>Why is it a bad idea to use HTML Tables for page layout?</h3>
+            <p>
+                Using HTML tables for page layout has been deprecated because it causes confusion for screenreaders.
+            </p>
+
+            <h3>What are caption elements useful for?</h3>
+            <p>
+                Caption elements give a brief summary of what the data in the table is for, and can be read by a
+                screenreader to give the user the option of reading all the data in the table or not.
+            </p>
+
+            <h3>What is the scope attribute?</h3>
+            <p>
+                The scope attribute organises the data in the table so that a screenreader can easily read out what
+                piece of
+                data relates to which headers. Another way to do this is specifically label each cell of data with all
+                the
+                relevant headers, but this can be tedious to write and is prone to error.
+            </p>
+
+        </section>
+
+        <section id="browser">
+            <h2>Browser Compatibility</h2>
+            <h3>What is the most used browser currently?</h3>
+            <p>Google Chrome</p>
+            <h3>What was the original name of the first web browser?</h3>
+            <p>WorldWideWeb, created by Tim Berners-Lee on a NeXT computer. The browser was later renamed to Nexus. It
+                could not only display pages, but also create and edit them.</p>
+
+            <h3>How are mobile browsers different on Apple mobile operating systems from Android?</h3>
+            <p>Browers on Android devices can use their usual
+                rendering engine such as Blink for Chrome or Gecko for Firefox. However, a;l browsers on Apple devices
+                use
+                the WebKit rendering engine.</p>
+        </section>
+
+        <footer class="container">
+            <a href="#top">^ Top</a>
+        </footer>
+</body>
+
+</html>

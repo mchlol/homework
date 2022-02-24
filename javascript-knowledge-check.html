@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Knowledge Check - Javascript</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src=""></script>
+
+</head>
+
+<body>
+
+    <div id="header">
+        <h1 id="top">Knowledge Check</h1>
+        <a href="index.html">
+            Home</a>
+    </div>
+
+    <section id="answers">
+
+        <h3>What are the eight data types in JavaScript?</h3>
+        <p>
+            <strong>number</strong> e.g. let x = 123; This can be an integer or floating point (decimal) number.<br>
+
+            <strong>string</strong> any text, including single characters e.g <code>let x = "hello";</code><br>
+
+            <strong>boolean</strong> e.g. <code>let x = true;</code> or <code>let x = false;</code><br>
+
+            <strong>bigInt</strong> - for numbers too big for the number type.<br>
+
+            e.g <code>let x = 1233567890123356789012335678901233567890n</code> - where n creates a bigInt.<br>
+
+            <strong>undefined</strong> - where a variable has been created, but not assigned a value e.g.
+            <code>let x;</code>
+            <br>
+
+            <strong>null</strong> - where the value of the variable is not known or equal to nothing.<br>
+
+            <strong>object</strong> - the only data type that is not primitive. It contains properties, made up of
+            key/value pairs.<br>
+        <pre>
+            <code>
+                let myObject = {
+                    name: "mchlol",
+                    age: 32,
+                    skillLevel: beginner
+                    }</code>
+            </pre>
+
+        Functions also belong to the object data type.<br>
+
+        <strong>symbol</strong> a special property included in objects. <a href="https://javascript.info/symbol">Read
+            more info about symbols here.</a>
+        </p>
+        <br>
+
+        <h3>Which data type is NOT primitive?</h3>
+        <p>Object, it can contain multiple types of data in properties, where other data types can only contain one type
+            of data.</p>
+
+        <h3>What is the relationship between null and undefined?</h3>
+        <p>Null and undefined both technically mean "nothing" but only undefined can refer to an existing variable that
+            exists but hasn't been assigned a value.</p>
+
+        <h3>What is the difference between single, double, and backtick quotes for strings?</h3>
+        <p>A string can use single quotes ' or double quotes " but cannot be used at the same time. Escape a quote by
+            using the backslash \. Backticks ` can create strings with embedded variables. </p>
+        <br>
+
+        <h3>What is the term for embedding variables/expressions in a string?</h3>
+        <p>Concatenate, or join.</p>
+        <br>
+
+        <h3>Which type of quote lets you embed variables/expressions in a string?</h3>
+        <p>Backtick `</p>
+        <br>
+
+        <h3>How do you embed variables/expressions in a string?</h3>
+        <p>By using backticks.<br>
+        <pre>
+    <code>let myName = "mchlol"
+    let x = `Hello, my name is ${myName}, nice to meet you.`
+    </code>
+    <strong>x = "Hello, my name is mchlol, nice to  meet you."</strong>
+    </pre>
+        </p>
+        <br>
+
+        <h3>How do you escape characters in a string?</h3>
+        <p>By using a backslash \ before the character.<br>
+        <p>
+        <pre>
+        <code>let x = "I\'m making an example";
+        </code>
+        <strong>x = "I'm making an example"</strong>
+        </pre>
+        </p>
+        <br>
+
+        <h3>What are methods?</h3>
+        <p>Methods are special operators in Javascript that can be used to perfom tasks such as convert a number to
+            string, convert a string to upper or lowercase, or return the type of a variable.
+        <pre>
+            <code>let x = 123;
+                let y = x.toString();
+                console.log(y);
+            </code>
+            <strong>x = "123";</strong>
+        </pre>
+        </p>
+        <br>
+
+        <h3>What is the difference between slice/substring/substr?</h3>
+        <p>
+            <strong>.slice()</strong> can be used to extract part of a string, it takes two parameters - the first is
+            the index to start at, and the second is the index to end at. The start is included in the extraction, but
+            the end is not. Using a negative will count from the END of the string.<br>
+            <strong>.substring()</strong> similar to .slice() but cannot take negatives.<br>
+            <strong>.substr()</strong> can be used for the same thing as .string() but while the first parameter is
+            still the index to start at, the second parameter is how many indexes after the starting index to end
+            at.<br>
+        </p>
+
+        <h3>What are the three logical operators and what do they stand for?</h3>
+        <p>
+            <strong>&&</strong> - AND: Returns true only if the result of all cases is true<br>
+            <strong>||</strong> - OR: Returns true as long as at least one case results in true<br>
+            <strong>!</strong> - NOT: Returns true if result is false.<br>
+        </p>
+
+        <h3>What are the comparison operators?</h3>
+        <p>
+            <strong>==</strong> - equality, able to perform type conversion<br>
+            <strong>===</strong> - strict equality, must be the same type<br>
+            <strong>
+                < and>
+            </strong> - less than or greater than</br>
+            <strong>
+                <= and>=
+            </strong> - less than or equal to, and greater than or equal to<br>
+        </p>
+
+        <h3>What are truthy and falsy values?</h3>
+        <p>A truthy value is any value that can be equal to 1, or true, a falsy value is equal to 0, or false.<br>
+        </p>
+
+        <h3>What are the falsy values in JavaScript?</h3>
+        <p>0</p>
+        <br>
+
+        <h3>What are conditionals?</h3>
+        <p>Conditionals are performed to make decisions based on the boolean outcome of a conditional test. E.g. if true
+            run this code, if false run this code.<br>
+        </p>
+
+        <h3>What is the syntax for an if/else conditional?</h3>
+        <pre>
+        <code>
+            if (condition === true) {
+                return true;
+                } else {
+                return false;
+                }
+            }
+        </code>
+    </pre>
+        <br>
+
+        <h3>What is the syntax for a switch statement?</h3>
+        <pre>
+        <code>
+            let x = true;
+            let result;
+            switch(x) {
+                case true:
+                result = "yes";
+                break;
+                case false:
+                result = "no";
+                default:
+                result = "not sure"
+            }
+        </code>
+    </pre>
+        <br>
+
+        <h3>What is the syntax for a ternary operator?</h3>
+        <pre>
+        <code>
+            (condition) ? code to run if true : code to run if false;
+        </code>
+    </pre>
+        <br>
+
+        <h3>What is nesting?</h3>
+        <p>If you want to test another condition after one has been met, you can nest another condition within it.
+            e.g.<br>
+        <pre>
+            <code>
+                if (condition === true) {
+                    if (anotherCondition === true) {
+                        return true;
+                    }
+                } else {
+                    return false;
+                }
+            </code>
+        </pre>
+
+    </section>
+
+</body>
+
+</html>
