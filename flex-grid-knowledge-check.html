@@ -96,13 +96,88 @@
             <h2>CSS Grid</h2>
 
             <h3>How can you use Flex to make a two-dimensional layout?</h3>
-            <p></p>
-
+            <p>Create a two-dimensional layout with Flex by allowing your flex items to wrap.</p>
+            <pre>
+    <code>
+        div {
+            display: flex;
+            flex-flow: row wrap;
+        }
+    </code>
+</pre>
             <h3>Why was CSS Grid introduced?</h3>
-            <p></p>
+            <p>CSS Grid was introduced to allow finer grained control over layouts similar to magazine and newspaper
+                layouts.</p>
 
             <h3>Which CSS layout module would you use to easily make equal sized items in a container?</h3>
-            <p></p>
+            <p>It is easier to use CSS Grid because the size of the items is declared at the time of creating the grid,
+                where flex children size is declared on the child itself.<br>
+                It's also easier to use <code>fr</code> units to make all child items the same size.</p>
+
+            <hr>
+
+            <h2>Creating a Grid</h2>
+
+            <h3>How does an HTML element become a grid item?</h3>
+            <p>An HTML element will become a grid item when it's parent is set to <code>display: grid</code>.</p>
+
+            <h3>What is the space between lines on the grid?</h3>
+            <p>The spaces between lines on the grid are the grid tracks.</p>
+
+            <h3>How do you set gutters (also known as alleys) in the grid?</h3>
+            <p>Gutters/alleys can be set by using the <code>gap</code> property.</p>
+
+            <h3>Describe what happens when you have more content than defined tracks.</h3>
+            <p>When there are more grid items than defined in the parent grid container, they create an <strong>implicit
+                    grid</strong>.</p>
+
+            <h3>How could you change the size for those undefined tracks?</h3>
+            <p>Define the size of implicit grid items by giving the parent grid container a <code>grid-auto-rows</code>
+                or <code>grid-auto-columns</code>
+                property.</p>
+
+            <hr>
+
+            <h2>Positioning Grid Elements</h2>
+
+            <h3>Explain the difference between a track and a line.</h3>
+            <p>A track is the actual content in a row or a column. A line is the divider between the rows and between
+                columns.
+            </p>
+
+            <h3>What is the smallest unit on a grid?</h3>
+            <p>The smallest unit on a grid is a cell. E.g. the content betwen row line 1 and 2 and column line 1 and 2
+                is the first cell.</p>
+
+            <h3>What kind of value do we give to the grid-column-start or grid-column-end properties?</h3>
+            <p>These properties take single integer values e.g. <code>grid-column-start: 2</code> indicates the content
+                will be positioned starting from column line 2.</p>
+
+            <h3>Which property can we use to combine all the start and end values for a grid item?</h3>
+            <p>We can combine all the start and end values to position a grid item with <code>grid-area</code>, which
+                will take 4 integers divided by forward slashes to position the item, in this order: row start, column
+                start, row end, column end.</p>
+            <pre>
+    <code>
+        .item {
+            grid-area: 1 / 1 / 3 / 4;
+        }
+    </code>            
+</pre>
+
+            <h3>Which grid container property can map out a visual structure of grid items?</h3>
+            <p>The <code>grid-template-areas</code> property, set on a grid container, can create a visual structure of
+                grid items, e.g.</p>
+            <pre>
+                <code>
+        .container {
+            grid-template-areas:
+                header  header
+                sidebar article
+                footer  footer;
+        }        
+                </code>
+</pre>
 
         </section>
     </main>
