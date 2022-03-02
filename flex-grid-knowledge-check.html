@@ -193,26 +193,55 @@
                 create 3 columns that are all 200px wide.</p>
 
             <h3>What is the difference between a static and dynamic size value?</h3>
+            <p>A static value, such as <code>px</code> will remain that size at all times. A dynamic value, such as a
+                percentage, <code>vw</code> or <code>fr</code> value, will change according to the size of the
+                window/viewport.</p>
+
             <h3>
                 How can you assign a grid track a flexible value that changes depending on the remaining space available
-                in
-                the grid?
+                in the grid?
             </h3>
+            <p>The <code>fr</code> is a flexible value that can change based on the space available.
+            </p>
+
             <h3>How can you assign grid tracks an uneven distribution of the remaining space in a grid?</h3>
+            <p>By using the <code>fr</code> unit, eg. <code>grid-template-columns: 1fr 2fr</code> will create 2 columns,
+                with the second being twice the width
+                of the first, regardless of the size of the container itself.
+            </p>
+
             <h3>Which CSS functions will return the smallest or largest value supplied to them?</h3>
+            <p>The <code>min()</code> function will return the smallest value passed to it, and the
+                <code>max()</code> function will return the largest value passed to it.
+            </p>
+
             <h3>
                 Which CSS Grid-only function allows you to supply a minimum and maximum track size that is calculated in
                 realtime?
             </h3>
+            <p>The <code>minmax()</code> function, when passed to the <code>repeat()</code> function, can determine the
+                smallest and largest value possible for an element which changes based on the size of the window or
+                viewport.</p>
             <h3>
                 Which global CSS function allows you to supply a minimum, ideal, and maximum value that is calculated in
                 realtime?
             </h3>
+            <p>The <code>clamp()</code> function takes three values in this order; the minimum size, ideal size, and
+                maximum size. The appropriate size is calculated based on the size of the container or viewport as it is
+                resized.</p>
+
             <h3>
                 What attribute of repeat() can be used to fill in as many grid tracks as possible, given certain
                 constraints?
             </h3>
+            <p><code>auto-fill</code> can be used to continue to add items/cells to the grid as it is resized, even if
+                they are empty.</p>
+
             <h3>What is the difference between auto-fit and auto-fill?</h3>
+            <p><code>auto-fit</code> will fit the existing items into the available space, and will stretch them to fill
+                the whole space. <code>auto-fit</code> does not change the size of existing items, but will add more
+                items as soon as there is room for them.</p>
+
         </section>
     </main>
 
