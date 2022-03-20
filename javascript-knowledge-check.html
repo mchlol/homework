@@ -1,45 +1,141 @@
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Knowledge Check - Javascript</title>
 
     <link rel="stylesheet" href="style.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src=""></script>
 
 </head>
 
+
 <body>
 
-    <div id="header">
-        <h1 id="top">Knowledge Check</h1>
-        <a href="index.html">
-            Home</a>
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#basics">JavaScript Basics</a></li>
+            <li><a href="#more-basics">More JavaScript Basics</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
     </div>
 
-    <section id="answers">
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - JavaScript</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
 
-        <h3>What are the eight data types in JavaScript?</h3>
-        <p>
-            <strong>number</strong> e.g. let x = 123; This can be an integer or floating point (decimal) number.<br>
+    <main id="answers" class="container">
+        <hr>
 
-            <strong>string</strong> any text, including single characters e.g <code>let x = "hello";</code><br>
+        <section id="basics">
+            <h2>JavaScript Basics</h2>
 
-            <strong>boolean</strong> e.g. <code>let x = true;</code> or <code>let x = false;</code><br>
+            <h3>Name the three ways to declare a variable?</h3>
+            <p><code>let</code>, <code>const</code>, and <code>var</code></p>
 
-            <strong>bigInt</strong> - for numbers too big for the number type.<br>
+            <h3>Which of the three variable declarations should you avoid and why?</h3>
+            <p><code>var</code> is an outdated way to declare a variable, as it is globally scoped. This can cause
+                issues especially when using multiple JavaScript files.</p>
 
-            e.g <code>let x = 1233567890123356789012335678901233567890n</code> - where n creates a bigInt.<br>
+            <h3>What rules should you follow when naming variables?</h3>
+            <p>The hard rules are to not start with a number, and the only special characters allowed are <code>$</code>
+                and <code>_</code>. You cannot use <strong>reserved</strong> words such as class, let, return, or
+                function.<br>
+                It is also best practice to use camelCase, give variables obvious, descriptive (human-readable) names
+                (avoid things like
+                <code>let abc = "Joe"</code> ) and keep them
+                consistent throughout your code.<br>
+            </p>
 
-            <strong>undefined</strong> - where a variable has been created, but not assigned a value e.g.
-            <code>let x;</code>
-            <br>
+            <h3>What should you look out for when using the + operator with numbers and strings?</h3>
+            <p>The <code>+</code> operator performs both addition and concatenation (joining). When using two numbers, +
+                will add them together. When using two strings, + will concatenate them. When using a number and a
+                string, + will concatenate them unless the string is first converted to a number.</p>
 
-            <strong>null</strong> - where the value of the variable is not known or equal to nothing.<br>
+            <h3>How does the % operator work?</h3>
+            <p>The <code>%</code> or 'modulo' operator is used to calculate the number left over from a division. E.g.
+                <code>
+                2
+                    % 2
+            </code> will equal 0 as there is nothing left over.
+            </p>
 
-            <strong>object</strong> - the only data type that is not primitive. It contains properties, made up of
-            key/value pairs.<br>
-        <pre>
+            <h3>Explain the difference between == and ===.</h3>
+            <p><code>===</code> is the strict comparison operator, meaning the operands being compared must be of the
+                same type. Using <code>==</code> also compares but performs type coercion. <br>
+                E.g. <code>2 == "2"</code> will return <code>true</code>, but <code>2 === "2"</code> will return
+                <code>false</code> because the values are not the same type.
+            </p>
+
+            <h3>When would you receive a NaN result?</h3>
+            <p>If you were to try to perform a mathematical equation using variables that are not numbers, e.g.
+                <code>"Two" * 5</code> will result in <code>NaN</code>.
+            </p>
+
+            <h3>How do you increment and decrement a number?</h3>
+            <p>Using the increment counter ++ or decrement counter --. You can also increment a variable immediately
+                with +=.
+            <pre>
+            <code>let apples = 2;
+                    apples++ // 2 + 1 = 3</code>
+                    <code>
+                    apples += 2 // 3 + 2 = 5
+            </code></pre>
+            </p>
+
+            <h3>Explain the difference between prefixing and post-fixing increment/decrement operators.</h3>
+            <p><span class="temp">One performs the count in a different order but I can't remember which.</span></p>
+
+            <h3>What is operator precedence and how is it handled in JS?</h3>
+            <p><span class="temp">I can't remember!</span></p>
+
+            <h3>How do you access developer tools and the console?</h3>
+            <p>Depending on your browser you can use a keyboard shortcut or through the menu: for Chrome this would be
+                <code>cmd + option + i</code> or <code>menu > more tools > developer tools</code>.
+            </p>
+
+            <h3>How do you log information to the console?</h3>
+            <p>Using the helpfully descriptive <code>console.log("Print this!")</code></p>
+
+            <h3>What does unary plus operator do to string representations of integers?</h3>
+            <p><span class="temp">It will concatenate them? Or convert them to numbers?</span></p>
+        </section>
+
+        <hr>
+
+        <section id="more-basics">
+            <h2>More JavaScript Basics</h2>
+
+            <h3>What are the eight data types in JavaScript?</h3>
+            <p>
+                <strong>number</strong> e.g. let x = 123; This can be an integer or floating point (decimal) number.<br>
+
+                <strong>string</strong> any text, including single characters e.g <code>let x = "hello";</code><br>
+
+                <strong>boolean</strong> e.g. <code>let x = true;</code> or <code>let x = false;</code><br>
+
+                <strong>bigInt</strong> - for numbers too big for the number type.<br>
+
+                e.g <code>let x = 1233567890123356789012335678901233567890n</code> - where n creates a bigInt.<br>
+
+                <strong>undefined</strong> - where a variable has been created, but not assigned a value e.g.
+                <code>let x;</code>
+                <br>
+
+                <strong>null</strong> - where the value of the variable is not known or equal to nothing.<br>
+
+                <strong>object</strong> - the only data type that is not primitive. It contains properties, made up of
+                key/value pairs.<br>
+            <pre>
             <code>
                 let myObject = {
                     name: "mchlol",
@@ -48,114 +144,121 @@
                     }</code>
             </pre>
 
-        Functions also belong to the object data type.<br>
+            Functions also belong to the object data type.<br>
 
-        <strong>symbol</strong> a special property included in objects. <a href="https://javascript.info/symbol">Read
-            more info about symbols here.</a>
-        </p>
-        <br>
+            <strong>symbol</strong> a special property included in objects. <a
+                href="https://javascript.info/symbol">Read
+                more info about symbols here.</a>
+            </p>
+            <br>
 
-        <h3>Which data type is NOT primitive?</h3>
-        <p>Object, it can contain multiple types of data in properties, where other data types can only contain one type
-            of data.</p>
+            <h3>Which data type is NOT primitive?</h3>
+            <p>Object, it can contain multiple types of data in properties, where other data types can only contain one
+                type
+                of data.</p>
 
-        <h3>What is the relationship between null and undefined?</h3>
-        <p>Null and undefined both technically mean "nothing" but only undefined can refer to an existing variable that
-            exists but hasn't been assigned a value.</p>
+            <h3>What is the relationship between null and undefined?</h3>
+            <p>Null and undefined both technically mean "nothing" but only undefined can refer to an existing variable
+                that
+                exists but hasn't been assigned a value.</p>
 
-        <h3>What is the difference between single, double, and backtick quotes for strings?</h3>
-        <p>A string can use single quotes ' or double quotes " but cannot be used at the same time. Escape a quote by
-            using the backslash \. Backticks ` can create strings with embedded variables. </p>
-        <br>
+            <h3>What is the difference between single, double, and backtick quotes for strings?</h3>
+            <p>A string can use single quotes ' or double quotes " but cannot be used at the same time. Escape a quote
+                by
+                using the backslash \. Backticks ` can create strings with embedded variables. </p>
+            <br>
 
-        <h3>What is the term for embedding variables/expressions in a string?</h3>
-        <p>Concatenate, or join.</p>
-        <br>
+            <h3>What is the term for embedding variables/expressions in a string?</h3>
+            <p>Concatenate, or join.</p>
+            <br>
 
-        <h3>Which type of quote lets you embed variables/expressions in a string?</h3>
-        <p>Backtick `</p>
-        <br>
+            <h3>Which type of quote lets you embed variables/expressions in a string?</h3>
+            <p>Backtick `</p>
+            <br>
 
-        <h3>How do you embed variables/expressions in a string?</h3>
-        <p>By using backticks.<br>
-        <pre>
+            <h3>How do you embed variables/expressions in a string?</h3>
+            <p>By using backticks.<br>
+            <pre>
     <code>let myName = "mchlol"
     let x = `Hello, my name is ${myName}, nice to meet you.`
     </code>
     <strong>x = "Hello, my name is mchlol, nice to  meet you."</strong>
     </pre>
-        </p>
-        <br>
+            </p>
+            <br>
 
-        <h3>How do you escape characters in a string?</h3>
-        <p>By using a backslash \ before the character.<br>
-        <p>
-        <pre>
+            <h3>How do you escape characters in a string?</h3>
+            <p>By using a backslash \ before the character.<br>
+            <p>
+            <pre>
         <code>let x = "I\'m making an example";
         </code>
         <strong>x = "I'm making an example"</strong>
         </pre>
-        </p>
-        <br>
+            </p>
+            <br>
 
-        <h3>What are methods?</h3>
-        <p>Methods are special operators in Javascript that can be used to perfom tasks such as convert a number to
-            string, convert a string to upper or lowercase, or return the type of a variable.
-        <pre>
+            <h3>What are methods?</h3>
+            <p>Methods are special operators in Javascript that can be used to perfom tasks such as convert a number to
+                string, convert a string to upper or lowercase, or return the type of a variable.
+            <pre>
             <code>let x = 123;
                 let y = x.toString();
                 console.log(y);
             </code>
             <strong>x = "123";</strong>
         </pre>
-        </p>
-        <br>
+            </p>
+            <br>
 
-        <h3>What is the difference between slice/substring/substr?</h3>
-        <p>
-            <strong>.slice()</strong> can be used to extract part of a string, it takes two parameters - the first is
-            the index to start at, and the second is the index to end at. The start is included in the extraction, but
-            the end is not. Using a negative will count from the END of the string.<br>
-            <strong>.substring()</strong> similar to .slice() but cannot take negatives.<br>
-            <strong>.substr()</strong> can be used for the same thing as .string() but while the first parameter is
-            still the index to start at, the second parameter is how many indexes after the starting index to end
-            at.<br>
-        </p>
+            <h3>What is the difference between slice/substring/substr?</h3>
+            <p>
+                <strong>.slice()</strong> can be used to extract part of a string, it takes two parameters - the first
+                is
+                the index to start at, and the second is the index to end at. The start is included in the extraction,
+                but
+                the end is not. Using a negative will count from the END of the string.<br>
+                <strong>.substring()</strong> similar to .slice() but cannot take negatives.<br>
+                <strong>.substr()</strong> can be used for the same thing as .string() but while the first parameter is
+                still the index to start at, the second parameter is how many indexes after the starting index to end
+                at.<br>
+            </p>
 
-        <h3>What are the three logical operators and what do they stand for?</h3>
-        <p>
-            <strong>&&</strong> - AND: Returns true only if the result of all cases is true<br>
-            <strong>||</strong> - OR: Returns true as long as at least one case results in true<br>
-            <strong>!</strong> - NOT: Returns true if result is false.<br>
-        </p>
+            <h3>What are the three logical operators and what do they stand for?</h3>
+            <p>
+                <strong>&&</strong> - AND: Returns true only if the result of all cases is true<br>
+                <strong>||</strong> - OR: Returns true as long as at least one case results in true<br>
+                <strong>!</strong> - NOT: Returns true if result is false.<br>
+            </p>
 
-        <h3>What are the comparison operators?</h3>
-        <p>
-            <strong>==</strong> - equality, able to perform type conversion<br>
-            <strong>===</strong> - strict equality, must be the same type<br>
-            <strong>
-                < and>
-            </strong> - less than or greater than</br>
-            <strong>
-                <= and>=
-            </strong> - less than or equal to, and greater than or equal to<br>
-        </p>
+            <h3>What are the comparison operators?</h3>
+            <p>
+                <strong>==</strong> - equality, able to perform type conversion<br>
+                <strong>===</strong> - strict equality, must be the same type<br>
+                <strong>
+                    < and>
+                </strong> - less than or greater than</br>
+                <strong>
+                    <= and>=
+                </strong> - less than or equal to, and greater than or equal to<br>
+            </p>
 
-        <h3>What are truthy and falsy values?</h3>
-        <p>A truthy value is any value that can be equal to 1, or true, a falsy value is equal to 0, or false.<br>
-        </p>
+            <h3>What are truthy and falsy values?</h3>
+            <p>A truthy value is any value that can be equal to 1, or true, a falsy value is equal to 0, or false.<br>
+            </p>
 
-        <h3>What are the falsy values in JavaScript?</h3>
-        <p>0</p>
-        <br>
+            <h3>What are the falsy values in JavaScript?</h3>
+            <p>0</p>
+            <br>
 
-        <h3>What are conditionals?</h3>
-        <p>Conditionals are performed to make decisions based on the boolean outcome of a conditional test. E.g. if true
-            run this code, if false run this code.<br>
-        </p>
+            <h3>What are conditionals?</h3>
+            <p>Conditionals are performed to make decisions based on the boolean outcome of a conditional test. E.g. if
+                true
+                run this code, if false run this code.<br>
+            </p>
 
-        <h3>What is the syntax for an if/else conditional?</h3>
-        <pre>
+            <h3>What is the syntax for an if/else conditional?</h3>
+            <pre>
         <code>
             if (condition === true) {
                 return true;
@@ -165,10 +268,10 @@
             }
         </code>
     </pre>
-        <br>
+            <br>
 
-        <h3>What is the syntax for a switch statement?</h3>
-        <pre>
+            <h3>What is the syntax for a switch statement?</h3>
+            <pre>
         <code>
             let x = true;
             let result;
@@ -183,20 +286,20 @@
             }
         </code>
     </pre>
-        <br>
+            <br>
 
-        <h3>What is the syntax for a ternary operator?</h3>
-        <pre>
+            <h3>What is the syntax for a ternary operator?</h3>
+            <pre>
         <code>
             (condition) ? code to run if true : code to run if false;
         </code>
     </pre>
-        <br>
+            <br>
 
-        <h3>What is nesting?</h3>
-        <p>If you want to test another condition after one has been met, you can nest another condition within it.
-            e.g.<br>
-        <pre>
+            <h3>What is nesting?</h3>
+            <p>If you want to test another condition after one has been met, you can nest another condition within it.
+                e.g.<br>
+            <pre>
             <code>
                 if (condition === true) {
                     if (anotherCondition === true) {
@@ -208,7 +311,8 @@
             </code>
         </pre>
 
-    </section>
+        </section>
+    </main>
 
 </body>
 
