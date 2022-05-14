@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <title>Knowledge Check - DOM Manipulation</title>
@@ -9,115 +10,146 @@
 
 </head>
 
+
 <body>
 
-    <div id="header">
-        <h1 id="top">Knowledge Check - DOM Manipulation</h1>
-        <a href="index.html">
-            < Home</a>
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#basics">Basics</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
     </div>
 
-    <section id="answers">
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - DOM Manipulation</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
 
-        <h3>What is the DOM?</h3>
-        <p>The DOM, or Document Object Model, is a tree-like representation of the contents of an html page. When the
-            html code is parsed by the brower it is converted to the DOM. For example, the body is the parent of all the
-            elements that display on the page, which are in turn children of the body. Any element that contains another
-            element is it's parent. The elements are called "nodes".</p>
 
-        <h3>How do you target the nodes you want to work with?</h3>
-        <p>You can target a specific node using CSS selectors. To target an element using its ID, you can use
-            <code>document.querySelector("#container")</code> or you can target all the elements that share a class by
-            using <code>document.querySelector(".wrapper")</code>. You can also select a group of nodes by selecting all
-            divs or paragraphs with <code>document.querySelectorAll("div")</code>.<br>
-            Another way to target nodes is by using relationship selectors, such as firstElementChild or
-            lastElementChild.</p>
+    <main id="answers" class="container">
+        <hr>
 
-        <h3>How do you create an element in the DOM?</h3>
-        <p>Create an element, such as a div, in the DOM with
-            <code>const container = document.createElement("div")</code>.</p>
+        <section id="basics">
 
-        <h3>How do you add an element to the DOM?</h3>
-        <p>Add an element to the DOM by appending it to a div or container that you have assigned to a variable;
-        <pre><code>
+            <h3>What is the DOM?</h3>
+            <p>The DOM, or Document Object Model, is a tree-like representation of the contents of an html page. When
+                the
+                html code is parsed by the brower it is converted to the DOM. For example, the body is the parent of all
+                the
+                elements that display on the page, which are in turn children of the body. Any element that contains
+                another
+                element is it's parent. The elements are called "nodes".</p>
+
+            <h3>How do you target the nodes you want to work with?</h3>
+            <p>You can target a specific node using CSS selectors. To target an element using its ID, you can use
+                <code>document.querySelector("#container")</code> or you can target all the elements that share a class
+                by
+                using <code>document.querySelector(".wrapper")</code>. You can also select a group of nodes by selecting
+                all
+                divs or paragraphs with <code>document.querySelectorAll("div")</code>.<br>
+                Another way to target nodes is by using relationship selectors, such as firstElementChild or
+                lastElementChild.
+            </p>
+
+            <h3>How do you create an element in the DOM?</h3>
+            <p>Create an element, such as a div, in the DOM with
+                <code>const container = document.createElement("div")</code>.
+            </p>
+
+            <h3>How do you add an element to the DOM?</h3>
+            <p>Add an element to the DOM by appending it to a div or container that you have assigned to a variable;
+            <pre><code>
     const container = document.querySelector("#container");
     const newDiv = document.createElement("div");
     newDiv.textContent = "I'm a new div!";
     container.appendChild(newDiv);
         </code></pre>
-        <div id="div-example">
+            <div id="div-example">
 
-        </div>
-        </p>
+            </div>
+            </p>
 
-        <h3>How do you remove an element from the DOM?</h3>
-        <p>To remove an element you can use <code>container.removeChild(newDiv)</code>.</p>
+            <h3>How do you remove an element from the DOM?</h3>
+            <p>To remove an element you can use <code>container.removeChild(newDiv)</code>.</p>
 
-        <h3>How can you alter an element in the DOM?</h3>
-        <p>You can add styles to your element directly through JavaScript, or by adding a class to it and then styling
-            it with CSS.<br>
-            <code></code>
-        </p>
+            <h3>How can you alter an element in the DOM?</h3>
+            <p>You can add styles to your element directly through JavaScript, or by adding a class to it and then
+                styling
+                it with CSS.<br>
+                <code></code>
+            </p>
 
-        <h3>When adding text to a DOM element, should you use textContent or innerHTML? Why?</h3>
-        <p>You should use textContent, because allowing the innerHTML of an element to be altered leaves it vulnerable
-            to malicious script injecting.</p>
+            <h3>When adding text to a DOM element, should you use textContent or innerHTML? Why?</h3>
+            <p>You should use textContent, because allowing the innerHTML of an element to be altered leaves it
+                vulnerable
+                to malicious script injecting.</p>
 
-        <h3>Where should you include your Javascript tag in your HTML file when working with DOM nodes?</h3>
-        <p>Your Javascript file should go at the end of your body, so that it runs after all of the code in your HTML
-            has been parsed by the browser. Otherwise it may not be able to access elements that have not been created
-            yet.<br>
-            You can link an external JavaScript file, or put a script tag at the end of your body.<br>
-            You can also put it in your head tag, but use <code>defer</code> to run it last.<br>
-            <code>&#x3C;script src=&#x22;script.js&#x22; defer&#x3E;&#x3C;/script&#x3E;</code><br>
-        </p>
+            <h3>Where should you include your Javascript tag in your HTML file when working with DOM nodes?</h3>
+            <p>Your Javascript file should go at the end of your body, so that it runs after all of the code in your
+                HTML
+                has been parsed by the browser. Otherwise it may not be able to access elements that have not been
+                created
+                yet.<br>
+                You can link an external JavaScript file, or put a script tag at the end of your body.<br>
+                You can also put it in your head tag, but use <code>defer</code> to run it last.<br>
+                <code>&#x3C;script src=&#x22;script.js&#x22; defer&#x3E;&#x3C;/script&#x3E;</code><br>
+            </p>
 
-        <h3>How do “events” and “listeners” work?</h3>
-        <p>An event is a mouse click or hover, key press, or other form of interaction with an HTML page. A listener can
-            'listen' for an 'event' and run some code when the 'event' happens.</p>
+            <h3>How do “events” and “listeners” work?</h3>
+            <p>An event is a mouse click or hover, key press, or other form of interaction with an HTML page. A listener
+                can
+                'listen' for an 'event' and run some code when the 'event' happens.</p>
 
-        <h3>What are three ways to use events in your code?</h3>
-        <p>
-        <ul>
-            <li>Attach an event listener directly in the html tag of your element. Such as;
-                <code>&#x3C;button onclick=&#x22;alert(&#x27;hello&#x27;)&#x22;&#x3E;Say hello&#x3C;/button&#x3E;</code>
-                = <button onclick="alert('hello')">Say hello</button>
-            </li>
-            <br>
-            <li>You can also use the onclick property in an external javascript file.<br>
-                If your html is set up like so:<br>
-                <code>&#x3C;button id="btn2">Say hello&#x3C;/button&#x3E;</code>
+            <h3>What are three ways to use events in your code?</h3>
+            <p>
+            <ul>
+                <li>Attach an event listener directly in the html tag of your element. Such as;
+                    <code>&#x3C;button onclick=&#x22;alert(&#x27;hello&#x27;)&#x22;&#x3E;Say hello&#x3C;/button&#x3E;</code>
+                    = <button onclick="alert('hello')">Say hello</button>
+                </li>
                 <br>
-                Your JavaScript file would access it like this: <br>
-                <pre><code>const btn2 = document.querySelector("#btn2");
+                <li>You can also use the onclick property in an external javascript file.<br>
+                    If your html is set up like so:<br>
+                    <code>&#x3C;button id="btn2">Say hello&#x3C;/button&#x3E;</code>
+                    <br>
+                    Your JavaScript file would access it like this: <br>
+                    <pre><code>const btn2 = document.querySelector("#btn2");
 btn2.onclick = () => alert("hello...again");</code></pre>
-                <button id="btn2">Say hello</button>
+                    <button id="btn2">Say hello</button>
+                    <br>
+                    In either of the above two points, your button can only have one onclick property.
+                </li>
                 <br>
-                In either of the above two points, your button can only have one onclick property.
-            </li>
-            <br>
-            <li>The third way is to use an event listener in your external JavaScript file, rather than just onclick.
-                This way we can add any other kinds of event listeners to the button.
-                <pre><code>btn2.addEventListener('click', () => { 
+                <li>The third way is to use an event listener in your external JavaScript file, rather than just
+                    onclick.
+                    This way we can add any other kinds of event listeners to the button.
+                    <pre><code>btn2.addEventListener('click', () => { 
                     alert("hello...again");
                 });
 </code></pre>
-            </li>
-        </ul>
-        </p>
+                </li>
+            </ul>
+            </p>
 
-        <h3>Why are event listeners the preferred way to handle events?</h3>
-        <p>we can attach an event listener for click, one for right click, one for hover, and so on.</p>
+            <h3>Why are event listeners the preferred way to handle events?</h3>
+            <p>we can attach an event listener for click, one for right click, one for hover, and so on.</p>
 
-        <h3>What are the benefits of using named functions in your listeners?</h3>
-        <p>Using a named function means you can read the code and understand what it does much easier, and you can reuse
-            that function elsewhere.</p>
+            <h3>What are the benefits of using named functions in your listeners?</h3>
+            <p>Using a named function means you can read the code and understand what it does much easier, and you can
+                reuse
+                that function elsewhere.</p>
 
-        <h3>How do you attach listeners to groups of nodes?</h3>
-        <p>Attach a listener to a group of nodes, by using <code>document.querySelectorAll("button")</code> which would
-            add the listener to all buttons in your html file. Iterate through the buttons (or other group of elements)
-            with:</p>
-        <pre><code>
+            <h3>How do you attach listeners to groups of nodes?</h3>
+            <p>Attach a listener to a group of nodes, by using <code>document.querySelectorAll("button")</code> which
+                would
+                add the listener to all buttons in your html file. Iterate through the buttons (or other group of
+                elements)
+                with:</p>
+            <pre><code>
     buttons.forEach(button) => {
         button.addEventListener('click', () => {
             alert("Hello");
@@ -125,37 +157,40 @@ btn2.onclick = () => alert("hello...again");</code></pre>
     });
             </code></pre>
 
-        <h3>What is the difference between the return values of querySelector and querySelectorAll?</h3>
-        <p>With querySelector you can select one element at a time, and it will only return that one element. With
-            querySelectorAll, you can target all the elements of a specific type or class, and it will return them in a
-            "nodelist".</p>
+            <h3>What is the difference between the return values of querySelector and querySelectorAll?</h3>
+            <p>With querySelector you can select one element at a time, and it will only return that one element. With
+                querySelectorAll, you can target all the elements of a specific type or class, and it will return them
+                in a
+                "nodelist".</p>
 
-        <h3>What does a “nodelist” contain?</h3>
-        <p>A nodelist contains all the elements of a type or class, accessed using querySelectorAll. A nodelist is very
-            similar to an array, but can not use all of the </p>
+            <h3>What does a “nodelist” contain?</h3>
+            <p>A nodelist contains all the elements of a type or class, accessed using querySelectorAll. A nodelist is
+                very
+                similar to an array, but can not use all of the </p>
 
-        <h3>Explain the difference between “capture” and “bubbling”.</h3>
-        <p>'Bubbling' is when events are triggered upwards through the nodes of an element. When an event handler is
-            triggered on an element, it will first happen on the element, then any handlers on it's parent with be
-            triggered, and so on for any ancestors above it.<br>
-            'Capturing' is when the events happen in the opposite order, or downwards. If an onclick property is
-            attached to a paragraph, which is nested within a div, which in turn is a child of your body tag, any event
-            listener on the body will happen first, then on the div, then finally on the paragraph.<br>
-            This series of events is known as 'propogation' and is very useful for things like forms. However, it is
-            possilbe to stop it with <code>event.stopPropogation()</code>.
-        </p>
+            <h3>Explain the difference between “capture” and “bubbling”.</h3>
+            <p>'Bubbling' is when events are triggered upwards through the nodes of an element. When an event handler is
+                triggered on an element, it will first happen on the element, then any handlers on it's parent with be
+                triggered, and so on for any ancestors above it.<br>
+                'Capturing' is when the events happen in the opposite order, or downwards. If an onclick property is
+                attached to a paragraph, which is nested within a div, which in turn is a child of your body tag, any
+                event
+                listener on the body will happen first, then on the div, then finally on the paragraph.<br>
+                This series of events is known as 'propogation' and is very useful for things like forms. However, it is
+                possilbe to stop it with <code>event.stopPropogation()</code>.
+            </p>
 
-    </section>
-    <a href="#top">^ Top</a>
-    <script>
-        const divExample = document.querySelector("#div-example");
-        const newDiv = document.createElement("div");
-        newDiv.textContent = "I'm a new div!";
-        divExample.appendChild(newDiv);
+        </section>
 
-        const btn2 = document.querySelector("#btn2");
-        btn2.onclick = () => alert("hello...again");
-    </script>
+        <script>
+            const divExample = document.querySelector("#div-example");
+            const newDiv = document.createElement("div");
+            newDiv.textContent = "I'm a new div!";
+            divExample.appendChild(newDiv);
+
+            const btn2 = document.querySelector("#btn2");
+            btn2.onclick = () => alert("hello...again");
+        </script>
 
 </body>
 
