@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knowledge Check - Command Line Basics</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src=""></script>
+
+</head>
+
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#intro">Intro to the Command Line</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
+    </div>
+
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - Command Line Basics</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <main id="answers" class="container">
+        <hr>
+        <section id="intro">
+            <h2>Command Line Basics</h2>
+
+            <h3>What is the command line?</h3>
+            <p>
+                The command line is where you can provide instructions directly to your computer, such as searching for
+                and
+                creating files or opening programs.
+            </p>
+
+            <h3>How do you open the command line on your computer?</h3>
+            <p>
+                I’m using macOS, so I can go to Applications > Utilities and open Terminal from there (as a shortcut, I
+                have
+                it pinned it to my dock).
+            </p>
+
+            <h3>How can you navigate to a particular directory?</h3>
+            <p><code>cd &lt;directory path&gt;</code> will navigate to that specific directory.</p>
+
+            <h3>Where will cd on its own navigate you to?</h3>
+            <p>Calling <code>cd</code> on its own will take you back to the home directory.</p>
+
+            <h3>Where will <code>cd ..</code> navigate you to?</h3>
+            <p>Calling <code>cd ..</code> will take you to the parent directory of the directory you’re in.</p>
+
+            <h3>How do you display the name of the directory you are currently in?</h3>
+            <p>Find out which directory you’re in by calling <code>pwd</code> which stands for ‘present working
+                directory’.</p>
+
+            <h3>How do you display the contents of the directory you are currently in?</h3>
+            <p>
+                Display the contents of the directory you’re in by calling <code>ls</code> to show a basic list of
+                files, <code>ls -a</code> to
+                include hidden files (where A is for All), or <code>ls -l</code> to show the list of files including
+                their details
+                such as size and type (L is for Long form listing).
+                You can also change how this list is displayed by chaining, e.g. <code>ls -lh</code> will display the
+                list with
+                human-readable sizes instead of the default number of bytes (such as 1.7k and 35m).
+            </p>
+
+            <h3>How do you create a new directory?</h3>
+            <p><code>mkdir &lt;filename&gt;</code> (make directory)</p>
+
+            <h3>How do you create a new file?</h3>
+            <p><code>touch &lt;filename&gt;</code></p>
+
+            <h3>How do you destroy a directory or file?</h3>
+            <p><code>rm &lt;filename&gt;</code> (remove)</p>
+
+            <h3>How do you rename a directory or file?</h3>
+            <p><code>mv a.txt b.txt</code> will rename a.txt so that it becomes b.txt.</p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

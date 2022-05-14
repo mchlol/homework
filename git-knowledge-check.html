@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knowledge Check - Git</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src=""></script>
+
+</head>
+
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#intro">Intro to Git</a></li>
+            <li><a href="#basics">Git Basics</a></li>
+            <li><a href="#messages">Commit Messages</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
+    </div>
+
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - Git Basics</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <main id="answers" class="container">
+        <hr>
+        <section id="intro">
+            <h2>Intro to Git</h2>
+
+            <h3>What kind of program is Git? </h3>
+            <p>Git is a version control program, which tracks the changes that have been made to files. </p>
+
+            <h3>
+                What are the differences between Git and a text editor in terms of what they save and their record
+                keeping?
+            </h3>
+            <p>A text editor can only save one copy of a file at a time. So if you wanted to keep copies of your file at
+                different stages, you would literally need several copies of it. With Git, a ‘snapshot’ of your code is
+                copied, so if you need to revert your changes you only need to refer to to the snapshot to restore it.
+            </p>
+
+            <h3>Does Git work at a local or remote level?</h3>
+            <p>Git works at a local level, but you can push your git repository (collection of files) to a remote
+                location.</p>
+
+            <h3>Does GitHub work at a local or remote level? </h3>
+            <p>Github is a service where you can store the remote copy of Git repository.</p>
+
+            <h3>Why is Git useful for an individual developer?</h3>
+            <p>
+                Git is useful for an individual developer as you can track all the changes you’ve made, and if
+                necessary,
+                revert back to a previous state.
+            </p>
+
+            <h3>Why are Git and GitHub useful for a team of developers?</h3>
+            <p>
+                Git and Github are useful for a team as multiple people can work on the same file at the same time,
+                using
+                branches, and then merge their changes together.
+            </p>
+        </section>
+        <hr>
+
+        <section id="basics">
+            <h2>Git Basics</h2>
+
+            <h3>How do you create a new repository on GitHub?</h3>
+            <p>On the GitHub website, click on the + sign at the top right and select new repository.</p>
+
+            <h3>How do you copy a repository onto your local machine from GitHub?</h3>
+            <p>
+                With your repo open on the GitHub website, click on the ‘code’ button and copy the SSH option. Back
+                at
+                the
+                command line, navigate to your project folder and enter git clone
+                <code>&lt;SSH link&gt;</SSH></code>
+            </p>
+
+            <h3>What is the default name of your remote connection?</h3>
+            <p><code>origin</code></p>
+
+            <h3>Explain what origin is in git push origin main.</h3>
+            <p><code>origin</code> is the name of the remote connection to your repository on Github.</p>
+
+            <h3>Explain what main is in git push origin main.</h3>
+            <p><code>main</code> is the main (formerly known as master) branch of your code.</p>
+
+            <h3>Explain the two-step system that Git uses to save files.</h3>
+            <p>
+                <code>git add</code> adds files to staging, then <code>git commit</code> commits the files to the
+                branch
+                you’re
+                working on.
+            </p>
+
+            <h3>How do you check the status of your current repository?</h3>
+            <p><code>git status</code></p>
+
+            <h3>How do you add files to the staging area in git?</h3>
+            <p><code>git add &lt;filename&gt;</code></p>
+
+            <h3>How do you commit the files in the staging area and add a descriptive
+                message?</h3>
+            <p><code>git commit -m “&lt;essage&gt;”</code></p>
+
+            <h3>How do you push your changes to your repository on GitHub?
+                <p><code>git push origin &lt;branch name&gt;</code></p>
+
+                <h3>How do you look at the history of your previous commits?
+                    <p><code>git log</code></p>
+        </section>
+
+        <section id="messages">
+            <h2>Commit Messages</h2>
+            <h3>What are two benefits of having well-written commit messages and a good commit history? </h3>
+            <ol>
+                <li>Other developers will have a clear idea of what you have done with a file, and why.</li>
+                <li>You may not always remember how or why you did something, so good commit messages also help you
+                    understand what you have done, when viewing a project after a long time away from it.</li>
+                <li>Having a good commit history means you will have a 'save point' to return to if something goes
+                    wrong.</li>
+            </ol>
+
+            <h3>How many characters should the subject line of your commit message be?</h3>
+            <p>The subject line should be less than 50 characters, with a hard limit of 72.</p>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
