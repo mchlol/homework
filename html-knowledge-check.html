@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knowledge Check - HTML Foundations</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src=""></script>
+
+</head>
+
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#intro">Intro to HTML & CSS</a></li>
+            <li><a href="#elements">Elements and Tags</a></li>
+            <li><a href="#boilerplate">HTML Boilerplate</a></li>
+            <li><a href="#text">Working with Text</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#links">Links and Images</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
+    </div>
+
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - HTML Foundations</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <main id="answers" class="container">
+        <hr>
+
+        <section id="intro">
+            <h2>Intro to HTML & CSS</h2>
+
+            <h3>What do HTML and CSS stand for?</h3>
+            <p>Hyper-Text Markup Language, and Cascading Style Sheets.</p>
+
+            <h3>Between HTML and CSS, which would you use for putting paragraphs of text on a webpage? </h3>
+            <p>HTML adds content such as paragraphs of text onto a webpage.</p>
+
+            <h3>Between HTML and CSS, which would you use for changing the font and background color of a button?</h3>
+            <p>CSS is for style such as changing fonts and colours.</p>
+        </section>
+        <hr>
+        <section id="elements">
+            <h2>Elements and Tags</h2>
+
+            <h3>What is an HTML tag?</h3>
+            <p>Tags tell the browser what kind of content the element will contain, so it knows how to interpret it.</p>
+
+            <h3>What are the three parts of an HTML element?</h3>
+            <p>An opening tag, content, and a closing tag.</p>
+        </section>
+        <hr>
+        <section id="boilerplate">
+            <h2>HTML boilerplate</h2>
+
+            <h3>What is the purpose of the doctype declaration?</h3>
+            <p>
+                The doctype declaration tells the browser which version of HTML to use.
+            </p>
+
+            <h3>What is the HTML element?</h3>
+            <p>The HTML element is the root of the webpage, and contains all of the elements.</p>
+
+            <h3>What is the purpose of the head element?</h3>
+            <p>
+                The head element contains all of the meta- information about the webpage such as the title, character
+                encoding, and links to external stylesheets. Nothing that needs to be visible is put in the head, only
+                in
+                the body.
+            </p>
+
+            <h3>What is the purpose of the body element?</h3>
+            <p>The body element contains the actual content of the webpage to be displayed, such as text and images.</p>
+        </section>
+        <hr>
+        <section id="text">
+            <h2>Working with Text</h2>
+
+            <h3>How do you create a paragraph in HTML?</h3>
+            <p><code>&lt;p&gt;Paragraph text content goes here!&lt;/p&gt;</code></p>
+
+            <h3>How do you create a heading in HTML?</h3>
+            <p>For a top level heading, <code>&lt;h1&gt;Heading&lt;/h1&gt;</code></p>
+
+            <h3>How many different levels of headings are there and what is the difference between them?</h3>
+            <p>
+                There are six levels of headings, and these are used the same way as in essays or articles to indicate
+                the
+                hierarchy of the content.
+            </p>
+
+            <h3>What element should you use to make text bold and important?</h3>
+            <p><code>strong</code></p>
+
+            <h3>What element should you use to make text italicized to add emphasis to it?</h3>
+            <p><code>em</code> (for emphasis)</p>
+
+            <h3>What relationship does an element have with any nested elements within it?</h3>
+            <p>An element that has nested elements within it is the parent of those elements (which become children).
+            </p>
+
+            <h3>What relationship do two elements have if they are at the same level of nesting?</h3>
+            <p>Two elements at the same level of nesting are siblings.</p>
+
+            <h3>How do you create HTML comments?</h3>
+            <p><code>&lt;!-- comment text would go here --&gt;</code></p>
+
+        </section>
+        <hr>
+
+        <section id="lists">
+            <h2>Lists</h2>
+
+            <h3>What HTML tag is used to create an unordered list? </h3>
+            <p><code>ul</code> will create a list of bullet points.</p>
+
+            <h3>What HTML tag is used to create an ordered list? </h3>
+            <p><code>ol</code> will create a list with consecutive numbering.</p>
+
+            <h3>What HTML tag is used to create list items within both unordered and ordered lists? </h3>
+            <p><code>li</code> will create a list item, and is the same within an unordered or an ordered list. </p>
+            <pre>
+<code>
+    &lt;ul&gt;
+        &lt;li&gt;This is a list item&lt;/li&gt;
+        &lt;li&gt;This is another list item&lt;/li&gt;
+    &lt;/ul&gt;
+    
+ </code>
+</pre>
+
+        </section>
+        <hr>
+        <section id="links">
+            <h2>Links and Images</h2>
+
+            <h3>What element is used to create a link?</h3>
+            <p>&lt;a&gt;</p>
+
+            <h3>What is an attribute?</h3>
+            <p>
+                An attribute is used to tell the browser more information about the type of content your tag will
+                include.
+            </p>
+
+            <h3>What attribute tells links where to go to?</h3>
+            <p><code>href</code>, e.g. <code>&lt;a href=“http://www.google.com”&gt;</code></p>
+
+            <h3>What is the difference between an absolute and relative link?</h3>
+            <p>
+                An absolute link includes the entire path of a link, whereas a relative link contains only part of
+                the path. The former is usually used to link to an entirely different website. The latter is used
+                when linking to files within the same directory.
+            </p>
+
+            <h3>Which element is used to display an image?</h3>
+            <p><code>&lt;img&gt;</code></p>
+
+            <h3>What two attributes do images always need to have?</h3>
+            <p>
+                An image tag must always include a <code>src</code> attribute, to point the browser to the correct file.
+                It also
+                must always include an <code>alt</code> attribute, to provide further info about the image in case the
+                image
+                cannot be loaded or the user is using a screenreader.
+            </p>
+
+            <h3>How do you access a parent directory in a filepath?</h3>
+            <p>
+                Using two dots will direct the file path to the folder directly above the current one, e.g.
+                <code>../filename.jpg</code>
+            </p>
+
+            <h3>What are the four main image formats that you can use for images on the web?</h3>
+            <p>Jpg (or jpeg), png, gif, and svg. There is also webp but it's not so widely used yet.</p>
+
+        </section>
+    </main>
+
+</body>
+
+</html>
