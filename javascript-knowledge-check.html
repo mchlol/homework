@@ -20,8 +20,8 @@
     <nav id="nav">
         <ul>
             <li><a class="home-link" href="index.html">Home</a></li>
-            <li><a href="#basics">JavaScript Basics</a></li>
-            <li><a href="#more-basics">More JavaScript Basics</a></li>
+            <li><a href="#fund1">Fundamentals Part 1</a></li>
+            <li><a href="#fund2">Fundamentals Part 2</a></li>
         </ul>
     </nav>
 
@@ -37,8 +37,8 @@
     <main id="answers" class="container">
         <hr>
 
-        <section id="basics">
-            <h2>JavaScript Basics</h2>
+        <section id="fund1">
+            <h2>Fundamentals Part 1</h2>
 
             <h3>Name the three ways to declare a variable?</h3>
             <p><code>let</code>, <code>const</code>, and <code>var</code></p>
@@ -60,7 +60,7 @@
             <h3>What should you look out for when using the + operator with numbers and strings?</h3>
             <p>The <code>+</code> operator performs both addition and concatenation (joining). When using two numbers, +
                 will add them together. When using two strings, + will concatenate them. When using a number and a
-                string, + will concatenate them unless the string is first converted to a number.</p>
+                string, + will concatenate them <em>unless</em> the string is first converted to a number.</p>
 
             <h3>How does the % operator work?</h3>
             <p>The <code>%</code> or 'modulo' operator is used to calculate the number left over from a division. E.g.
@@ -72,14 +72,15 @@
 
             <h3>Explain the difference between == and ===.</h3>
             <p><code>===</code> is the strict comparison operator, meaning the operands being compared must be of the
-                same type. Using <code>==</code> also compares but performs type coercion. <br>
+                same type. Using <code>==</code> also compares, but performs type coercion, so should be mostly avoided
+                as it can produce bugs. <br>
                 E.g. <code>2 == "2"</code> will return <code>true</code>, but <code>2 === "2"</code> will return
-                <code>false</code> because the values are not the same type.
+                <code>false</code> because the values are not the same type - 2 is a number and "2" is a string.
             </p>
 
             <h3>When would you receive a NaN result?</h3>
             <p>If you were to try to perform a mathematical equation using variables that are not numbers, e.g.
-                <code>"Two" * 5</code> will result in <code>NaN</code>.
+                <code>"Two" * 5</code> will result in <code>NaN</code> because "Two" is a string, not a number.
             </p>
 
             <h3>How do you increment and decrement a number?</h3>
@@ -94,10 +95,20 @@
             </p>
 
             <h3>Explain the difference between prefixing and post-fixing increment/decrement operators.</h3>
-            <p><span class="temp">One performs the count in a different order but I can't remember which.</span></p>
+            <p>
+                Postfixing <code>counter++</code> and prefixing <code>++counter</code> both do the same thing. If we
+                intend immediately use the increased or decreased value, we would use the prefix form
+                <code>++counter</code>. If we would like to increase the value but start off using the original value,
+                we use the postfix form <code>counter++</code>.
+            </p>
 
             <h3>What is operator precedence and how is it handled in JS?</h3>
-            <p><span class="temp">I can't remember!</span></p>
+            <p>Operator precedence determines the order in which operators in an expression will execute. There is a <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence"
+                    target="_blank">precedence table</a> that outlines the priority value of all of the operators, the
+                one with the highest number is executed first.
+                E.g. <code>1 + 2 * 2</code> will first perform addition because the + operator has higher precedence
+                than *. </p>
 
             <h3>How do you access developer tools and the console?</h3>
             <p>Depending on your browser you can use a keyboard shortcut or through the menu: for Chrome this would be
@@ -108,13 +119,24 @@
             <p>Using the helpfully descriptive <code>console.log("Print this!")</code></p>
 
             <h3>What does unary plus operator do to string representations of integers?</h3>
-            <p><span class="temp">It will concatenate them? Or convert them to numbers?</span></p>
+            <p>If you have values as strings, <code>"one"</code> and <code>"two"</code>, they will be treated as
+                strings,
+                not numbers, so the unary
+                plus
+                operator (+) will concatenate (join) them together as a string, like so: <code>"onetwo"</code><br>
+                If the values are <code>"1"</code> and <code>"2"</code> these are still strings, not numbers, so you
+                will still get <code>"12"</code> (a string), even if
+                one is actually of type number (like <code>"1"</code>
+                and <code>2</code>). You can only end up with <code>3</code> if both values are of type
+                <code>number</code>, ie. <code>1</code> and
+                <code>2</code>.
+            </p>
         </section>
 
         <hr>
 
-        <section id="more-basics">
-            <h2>More JavaScript Basics</h2>
+        <section id="fund2">
+            <h2>Fundamentals Part 2</h2>
 
             <h3>What are the eight data types in JavaScript?</h3>
             <p>
@@ -145,7 +167,7 @@
                     }</code>
             </pre>
 
-            Functions also belong to the object data type.<br>
+            Functions and arrays also belong to the object data type.<br>
 
             <strong>symbol</strong> a special property included in objects. <a
                 href="https://javascript.info/symbol">Read
@@ -154,9 +176,11 @@
             <br>
 
             <h3>Which data type is NOT primitive?</h3>
-            <p>Object, it can contain multiple types of data in properties, where other data types can only contain one
+            <p>Objects are not primitive - they can contain multiple types of data in properties, where other data types
+                can only contain one
                 type
-                of data.</p>
+                of data.<br>
+                Functions and arrays are objects.</p>
 
             <h3>What is the relationship between null and undefined?</h3>
             <p>Null and undefined both technically mean "nothing" but only undefined can refer to an existing variable
@@ -166,11 +190,11 @@
             <h3>What is the difference between single, double, and backtick quotes for strings?</h3>
             <p>A string can use single quotes ' or double quotes " but cannot be used at the same time. Escape a quote
                 by
-                using the backslash \. Backticks ` can create strings with embedded variables. </p>
+                using the backslash \. Backticks ` can create strings with embedded variables.</p>
             <br>
 
             <h3>What is the term for embedding variables/expressions in a string?</h3>
-            <p>Concatenate, or join.</p>
+            <p>Template literal</p>
             <br>
 
             <h3>Which type of quote lets you embed variables/expressions in a string?</h3>
@@ -180,10 +204,10 @@
             <h3>How do you embed variables/expressions in a string?</h3>
             <p>By using backticks.<br>
             <pre>
-    <code>let myName = "mchlol"
+    <code>let myName = "Bob"
     let x = `Hello, my name is ${myName}, nice to meet you.`
     </code>
-    <strong>x = "Hello, my name is mchlol, nice to  meet you."</strong>
+    <strong>x = "Hello, my name is Bob, nice to  meet you."</strong>
     </pre>
             </p>
             <br>
@@ -200,7 +224,8 @@
             <br>
 
             <h3>What are methods?</h3>
-            <p>Methods are special operators in Javascript that can be used to perfom tasks such as convert a number to
+            <p>Methods are built in functions in Javascript that can be used to perfom common tasks, such as convert a
+                number to
                 string, convert a string to upper or lowercase, or return the type of a variable.
             <pre>
             <code>let x = 123;
@@ -218,7 +243,8 @@
                 is
                 the index to start at, and the second is the index to end at. The start is included in the extraction,
                 but
-                the end is not. Using a negative will count from the END of the string.<br>
+                the end is not. Using a negative integer for the first argument will count from the END of the
+                string.<br>
                 <strong>.substring()</strong> similar to .slice() but cannot take negatives.<br>
                 <strong>.substr()</strong> can be used for the same thing as .string() but while the first parameter is
                 still the index to start at, the second parameter is how many indexes after the starting index to end
@@ -237,25 +263,29 @@
                 <strong>==</strong> - equality, able to perform type conversion<br>
                 <strong>===</strong> - strict equality, must be the same type<br>
                 <strong>
-                    < and>
+                    &lt; and &gt;
                 </strong> - less than or greater than</br>
                 <strong>
-                    <= and>=
+                    &lt;= and &gt;=
                 </strong> - less than or equal to, and greater than or equal to<br>
             </p>
 
             <h3>What are truthy and falsy values?</h3>
             <p>A truthy value is any value that can be equal to 1, or true, a falsy value is equal to 0, or false.<br>
+                <span class="temp">Is -1 also falsy?</span>
             </p>
 
             <h3>What are the falsy values in JavaScript?</h3>
-            <p>0</p>
+            <p>False, 0, -0, an empty string, null, undefined, and NaN.<br>
+                NaN is not equivalent to anything, including another NaN.</p>
             <br>
 
             <h3>What are conditionals?</h3>
             <p>Conditionals are performed to make decisions based on the boolean outcome of a conditional test. E.g. if
                 true
                 run this code, if false run this code.<br>
+                It is usually possible to use only one value to determine true of false, e.g. <code>if (a)</code> will
+                return true if the variable <code>a</code> has a truthy value.
             </p>
 
             <h3>What is the syntax for an if/else conditional?</h3>
@@ -311,6 +341,61 @@
                 }
             </code>
         </pre>
+
+        </section>
+
+        <hr>
+
+        <section id="devtools">
+            <h2>JavaScript Developer Tools</h2>
+
+            <h3>How do you open developer tools?</h3>
+            <p>I'm using Chrome, so <code>option + command + i</code></p>
+
+            <h3>How do you change screen size of a website using developer tools?</h3>
+            <p>Using device mode, you can either resize the window yourself or choose between preset sizes of popular
+                devices (such as the various releases of iPhone).</p>
+
+            <h3>What is a breakpoint?</h3>
+            <p>A breakpoint is a point in your code which you can pause your script at to see what its doing step by
+                step.</p>
+
+            <h3>How do you set a breakpoint?</h3>
+            <p>You either type in a <code>debugger;</code> directly into your code, click on the line in the dev tools
+                sources tab, or set a breakpoint on an event listener in the dev tools. You can also right click on an
+                element in the elements tab and set a breakpoint as an event listener there too.</p>
+
+        </section>
+
+
+        <hr>
+
+        <section id="fund3">
+            <h2>Fundamentals Part 3</h2>
+
+            <h3>What are functions useful for?</h3>
+            <p>Functions are actions performed by your code that can be used over and over again.</p>
+
+            <h3>How do you invoke a function?</h3>
+            <p>Invoke a function by calling it with functionName(). The parentheses perform the action of actually
+                calling the function - the function will not run without them.
+            </p>
+
+            <h3>What are anonymous functions?</h3>
+            <p>Anonymous functions are functions that are used as part of an expression, their return value is used
+                immediately and the function itself is not used again.</p>
+
+            <h3>What is function scope?</h3>
+            <p>Function scope refers to the variables with a functions code block <em>only</em> being accessible within
+                the function itself. If a variable is defined within a function, it cannot be accessed anywhere else.
+            </p>
+
+            <h3>What are return values?</h3>
+            <p>Return values are the products of a function when it is called. For example if you want to run a function
+                that adds two numbers together, the return value will be the result of the addition.</p>
+
+            <h3>What are arrow functions?</h3>
+            <p>An arrow function is a shorter more concise way of writing a function expression.</p>
 
         </section>
     </main>
