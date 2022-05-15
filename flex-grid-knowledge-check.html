@@ -43,6 +43,13 @@
         <section id="flex">
             <h2>Flexbox</h2>
 
+            <h3>What’s the difference between a flex container and a flex item?</h3>
+            <p>A flex container is the parent container where the rule <code>display: flex</code> is defined.</p>
+
+            <h3>How do you create a flex item?</h3>
+            <p>A flex item is any direct child of a flex parent container. It doesn't have to be specifically defined as
+                a flex item, it is automatically assigned as such when it is the direct child of a flex container.</p>
+
             <h3>What are the 3 values defined in the shorthand <code>flex</code> property? (e.g.
                 <code>flex: 1 1 auto</code>)?
             </h3>
@@ -69,7 +76,8 @@
             </p>
 
             <h3>How do you make flex items arrange themselves vertically instead of horizontally?</h3>
-            <p>You can arrange flex items vertically instead of horizontally by changing the rule on the flex container
+            <p>The default direction is row (horizontally), but you can arrange flex items vertically by changing the
+                rule on the flex container
                 to
                 <code>flex-direction: column</code>.
             </p>
@@ -79,10 +87,16 @@
 
             <h3>In a row flex-container, what does flex-basis refer to?</h3>
             <p>Flex basis will refer to the width of the flex item.</p>
+
             <h3>Why do the previous two questions have different answers?</h3>
-            <p>When flex direction is set to column, the main axis is vertical and the cross axis is horizontal. When
-                flex-direction
-                set to row, the main axis is horizontal and the cross axis is vertical.</p>
+            <p>When <code>flex-direction</code> is set to <code>column</code>, flex-basis will refer to the height
+                because the items are arranged vertically, meaning the main axis is vertical, and the cross axis is
+                horizontal.
+                <br>
+                When the <code>flex-direction</code> is set to row, the main axis is horizontal so flex-basis will refer
+                to the width as the items are arranged side-by-side, instead of on top of each other. The cross axis is
+                then vertical.
+            </p>
 
             <h3>What is the difference between <code>justify-content</code> and <code>align-items?</code></h3>
             <p>Justify-content will organise the items along the main axis, and align-items organises them along the
@@ -90,10 +104,13 @@
                 axis.</p>
 
             <h3>How do you use flexbox to completely center a div inside a flex container?</h3>
-            <p>Use justify-content to center along the main axis and align-items to center along the cross axis.</p>
+            <p>Use justify-content to center along the main axis and align-items to center along the cross axis.<br>
+                There is also a property called <code>place-items</code> that can be set to <code>center</code> for both
+                flex containers and grid containers.</p>
 
             <h3>What's the difference between justify-content: space-between and justify-content: space-around?</h3>
-            <p>Space-between will organise items with even space between them, and space-around will organise items with
+            <p>Space-between will organise items with even space between them, but not on the side. Space-around will
+                organise items with
                 even space between them AND on either side.</p>
 
 
@@ -108,7 +125,9 @@
         </code>
     </pre>
         </section>
+
         <hr>
+
         <section id="grid">
             <h2>CSS Grid</h2>
 
