@@ -42,11 +42,19 @@ a:hover {
 }
 
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Newsreader', 'Times New Roman', Times, serif;
+    font-weight: 900;
+    padding-top: 1em;
+}
+
+h1,
+h2 {
     color: var(--dark);
-   font-family:'Newsreader', 'Times New Roman', Times, serif;
-   font-weight: 900;
-} 
+}
 
 .container {
     width: 80%;
@@ -59,7 +67,8 @@ h1, h2, h3, h4 {
 }
 
 
-pre, code {
+pre,
+code {
     background-color: var(--pale);
 }
 
@@ -70,9 +79,9 @@ pre {
 
 
 strong {
-    text-decoration-color:var(--dark);
+    text-decoration-color: var(--dark);
     font-weight: bold;
-    text-decoration-line:underline;
+    text-decoration-line: underline;
     text-decoration-style: dashed;
 }
 
@@ -137,9 +146,9 @@ nav h3 {
 }
 
 nav a {
-    text-decoration-line:underline;
+    text-decoration-line: underline;
     text-decoration-style: wavy;
-    color:var(--pale);  
+    color: var(--pale);
 }
 
 h2:before {
