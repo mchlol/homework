@@ -22,6 +22,9 @@
             <li><a class="home-link" href="index.html">Home</a></li>
             <li><a href="#help">Asking for Help</a></li>
             <li><a href="#web">How does the Web Work?</a></li>
+            <li><a href="#problem">Problem Solving</a></li>
+            <li><a href="#errors">Understanding Errors</a></li>
+            <li><a href="#clean-code">Clean Code</a></li>
         </ul>
     </nav>
 
@@ -130,9 +133,101 @@
                 other
                 factors, in order to provide the user with the best results.
             </p>
+        </section>
+        <hr>
+        <section id="problem">
+            <h3>What are the three stages in the problem solving process?</h3>
+            <p>Understanding the problem, planning how to solve the problem, and breaking the problem down into smaller,
+                subproblems.</p>
 
+            <h3>Why is it important to clearly understand the problem first?</h3>
+            <p>If you don't understand the problem, you won't know where to start, could waste a lot of time on the
+                wrong things, and confuse
+                yourself even further in the process.</p>
+
+            <h3>What can you do to help get a clearer understanding of the problem?</h3>
+            <p>Break it down into smaller subproblems, and try to solve those first. "<a
+                    href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-lessons-in-problem-solving-d1d8bf1de7d2/"
+                    target="blank">This technique is the cornerstone of problem-solving.</a>" - Richard Reis.</p>
+
+            <h3>What are some of the things you should do in the planning stage of the problem solving process?</h3>
+            <p>Draw a sketch of the interface, draw diagrams, write pseudocode, explain the project to someone else
+                (like '<a href="https://rubberduckdebugging.com/" target="_blank">rubber duck
+                    debugging</a>').<br>
+                Make sure that you fully understand what it is you're trying to achieve, and break it down into steps.
+            </p>
+
+            <h3>What is an algorithm?</h3>
+            <p>An algorithm is the series of steps taken to accomplish a task.</p>
+
+            <h3>What is pseudocode?</h3>
+            <p>
+                Pseudocode is the instructions or steps that a program will take to accomplish a task, but it's just
+                written in normal language, for humans to read instead of actual code.
+            </p>
+
+            <h3>What are the advantages of breaking a problem down and solving the smaller problems?</h3>
+            <p>
+                Looking at one large problem can seem like an insurmountable task. Breaking it down into smaller
+                sub-problems means you can focus on each small part at a time, making things clearer and easier.
+            </p>
 
         </section>
+
+        <section id="errors">
+            <h2>Understanding Errors</h2>
+
+            <h3>What are three reasons why you may see a TypeError?</h3>
+            <p>
+            <ol>
+                <li>Passing a variable of one type to a function which is expecting a different type.</li>
+                <li>Trying to modify a value that can't be changed, e.g. reassigning a const</li>
+                <li>Trying to use a value in an inappropriate way, e.g. using an array method on a string.</li>
+            </ol>
+            </p>
+
+            <h3>What is the key difference between an error and a warning?</h3>
+            <p>A warning will still allow your code to run, but will warn you of a problem. An error will cause your
+                code not to run at all.</p>
+
+            <h3>What is one method you can use to resolve an error?</h3>
+            <p>Use the debugger in your browser, use console.log, or put a <code>debugger;</code> in your code where the
+                error is occuring. In this way you can follow the steps of your code and see <strong>what you actually
+                    told it to do</strong>, vs what you <em>think</em> you told it to do.</p>
+
+        </section>
+
+        <section id="clean-code">
+            <h2>Clean Code</h2>
+
+            <h3>Why is it important to write clean code?</h3>
+            <p>
+                It's important to write clean code so that other developers (and future you) can read it easily and
+                understand what it does.
+            </p>
+
+            <h3>Name 5 clean code principles previously mentioned</h3>
+            <p>
+            <ol>
+                <li>Plan out your code before you write it so it doesn't turn into impossible-to-read spaghetti.</li>
+                <li>Use indentation, and use it consistently - it will go a long way to making your code easier to
+                    understand for the
+                    next person (or your future self).</li>
+                <li>Break up large functions into smaller ones.</li>
+                <li>Use standard naming conventions - e.g. starting variables with nouns and functions with verbs, using
+                    camelCase, and </li>
+                <li>Don't overuse comments, your code should be reasonably self explanatory.</li>
+            </ol>
+            </p>
+
+            <h3>What is the difference between good comments and bad comments?</h3>
+            <p>Good comments are concise and to the point, allowing the developer reading it to get a quick extra
+                bit of knowledge about that piece of code.<br>
+                Bad comments are things like leaving a note to self, blaming someone else for writing a piece of
+                code, or being vague. </p>
+
+        </section>
+
 
     </main>
 
