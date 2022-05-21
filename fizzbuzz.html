@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            position: relative;
+        }
+
+        header,
+        main {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        h1,
+        h2 {
+            text-decoration: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: palevioletred;
+            text-underline-offset: 5px;
+        }
+
+        code {
+            color: palevioletred;
+            font-size: 1.1rem;
+        }
+
+        hr {
+            border-top: 1px solid palevioletred;
+        }
+
+        .input-button {
+            background-color: palevioletred;
+            color: white;
+            border: 1px solid maroon;
+            border-radius: 1em;
+            padding: 0.75em;
+            margin-bottom: 0.5em;
+        }
+
+        .input-button:hover {
+            background-color: #E28DA9;
+        }
+
+        .input-button:active {
+            background-color: #EDB6C8;
+        }
+
+        .output {
+            border: 2px solid palevioletred;
+            padding: 1em;
+        }
+
+        footer {
+            margin: 0 auto;
+            font-size: small;
+            /* position: fixed;
+            bottom: 0;
+            right: 0;
+            padding-bottom: 2em; */
+            width: 100%;
+            text-align: center;
+        }
+
+        a {
+            color: slategray;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: palevioletred;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>FizzBuzz</h1>
+        <p>
+            Write a program that takes a user's input and prints the numbers from one to the number the user entered.
+            However, for multiples of three print <code>Fizz</code> instead of the number and for the multiples of five
+            print <code>Buzz</code>. For numbers which are multiples of both three and five print <code>FizzBuzz</code>.
+        </p>
+    </header>
+    <hr>
+    <main>
+        <section class="understanding">
+            <h2>Understanding the Problem</h2>
+            <p>
+                Take in user input as a positive integer. Set a counter variable starting from 1. Begin counting up to
+                the number the user has entered. For every number along the way that is a multiple of 3, print
+                <code>Fizz</code> instead of the number. For
+                every multiple of 5, print <code>Buzz</code>. For every number that is a multiple of both 3 and 5,
+                print <code>FizzBuzz</code>. This should look something like
+                <code>1, 2, Fizz, 4, Buzz, 6, 7, 8, 9, 10, 11, 12, 13, 14, FizzBuzz</code>.
+            </p>
+
+        </section>
+        <hr>
+        <section class="plan">
+            <h2>Plan</h2>
+            <h3>Pseudocode</h3>
+            <p>
+                Create a button for the user to click.<br>
+                Create a div to hold our display. <br>
+                Assign a function that opens a prompt when the button is clicked.<br>
+                Store the prompt input in a variable. <br>
+                Check that the prompt input is a positive integer. <br>
+                If it's not, encourage the user to pick something we can use. <br>
+                Limit the number to 20. <br>
+                Create a counter variable. <br>
+                Write a function that includes a for loop that will increment the counter variable, up until it reaches
+                the input. <br>
+                Write a function to print each number in the loop to the div.<br>
+                Within this function, nest an if loop to check if the value meets the fizz/buzz/fizzbuzz conditions and
+                if so, print that instead of the value.
+            </p>
+        </section>
+        <hr>
+        <section class="interface">
+            <h2>Interface</h2>
+            <button class="input-button">Input</button>
+            <h4>Output:</h4>
+            <div class="output">
+                <p>Click the <code>input</code> button above to choose a number, and begin the counter.<br>
+                    Numbers will display here!</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <a href="https://www.theodinproject.com/lessons/foundations-problem-solving" target="blank">The Odin Project
+            Foundations - Problem Solving</a>
+    </footer>
+
+    <script>
+        const inputButton = document.querySelector(".input-button");
+        const outputDiv = document.querySelector(".output");
+        let counter = 1;
+
+        function displayMessage(message) {
+            outputDiv.textContent = "";
+            messageDisplay.textContent = message;
+            outputDiv.appendChild(messageDisplay);
+        }
+
+        function displayNumbers(value) {
+            let p = document.createElement('p');
+            if (value % 3 === 0 && value % 5 === 0) {
+                p.textContent = "FizzBuzz";
+            } else if (value % 3 === 0) {
+                p.textContent = "Fizz";
+            } else if (value % 5 === 0) {
+                p.textContent = "Buzz";
+            } else {
+                p.textContent = `${value}`;
+            }
+            outputDiv.appendChild(p);
+        }
+
+
+        inputButton.addEventListener('click', handleClick);
+        function handleClick() {
+            let messageDisplay = document.createElement('p');
+            let userInput = prompt("Please enter a positive integer");
+            let num = Number(userInput);
+
+            if (num == 0) {
+                message = "Would you kindly choose something besides 0? It kinda defeats the purpose.";
+                outputDiv.textContent = "";
+                messageDisplay.textContent = message;
+                outputDiv.appendChild(messageDisplay);
+
+            } else if (!Number.isInteger(num)) {
+                message = "Please choose a whole number, it makes this a lot easier.";
+                outputDiv.textContent = "";
+                messageDisplay.textContent = message;
+                outputDiv.appendChild(messageDisplay);
+
+            } else if (num > 20) {
+                message = "Sorry I should have mentioned, pick something reasonably small - under 20 should do.";
+                outputDiv.textContent = "";
+                messageDisplay.textContent = message;
+                outputDiv.appendChild(messageDisplay);
+
+            } else {
+                outputDiv.textContent = "";
+                for (let i = 1; i <= num; i++) {
+                    displayNumbers(i);
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
