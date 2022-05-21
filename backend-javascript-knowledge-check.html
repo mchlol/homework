@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knowledge Check - Backend Javascript</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src=""></script>
+
+</head>
+
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#constructors">Objects and Object Constructors</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
+    </div>
+
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - Back-end JavaScript</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <main id="answers" class="container">
+        <hr>
+
+        <section id="constructors">
+            <h2>Objects and Object Constructors</h2>
+
+            <h3>Write an object constructor and instantiate the object.</h3>
+            <pre>
+            <code>
+                // object constructor:
+            function Cat(name, sound) {
+                this.name = name,
+                this.sound = sound
+            }
+            
+                // instantiate the object
+            const fluffy = new Cat('Fluffy', 'miaow!');
+            </code>
+            </pre>
+
+            <h3>Describe what a prototype is and how it can be used.</h3>
+            <p>
+                A prototype is a property that exists by default on any JavaScript function (all functions are objects).
+                Add methods onto this
+                prototype, and they can be used by any object created using the function as a constructor; such objects
+                are also known as <strong>instances</strong>.</p>
+
+            <h3>Explain prototypal inheritance.</h3>
+            <p>When an object is created with a constructor, it will inherit any properties and methods from its parent
+                object, which in turn inherits these from its parent and so on back to
+                <code>Object.prototype</code>.<br>
+                When a lookup is performed on an object, it will look
+                first on that object, and if the property is not found, the search will continues on that objects
+                prototype, and so on up
+                the chain until the property is found.
+            </p>
+
+            <h3>What are the basic dos and don'ts of prototypical inheritance?</h3>
+            <p><strong>Don't</strong> define a function directly on an object constructor - unless you want it to be
+                available only on
+                that object. Defining it on the prototype means only defining it once, and not creating multiples of
+                the same function every time a new object is created.<br>
+                <strong>Do</strong> use an objects prototype to define functions. This is so they can be used by all
+                instances of that
+                object,
+                and the function only needs to be defined once. This will keep your files smaller and help you to write
+                clean code.
+            </p>
+
+            <h3>Explain what Object.create does.</h3>
+            <p><code>Object.create(obj)</code> creates an object, where <code>obj</code> is the object to inherit
+                properties from.</p>
+
+            <h3>Notes</h3>
+            <ul>
+                <li>Any object can only have ONE prototype and can only inherit from ONE object prototype at a
+                    time.</li>
+                <li>Arrow functions do not have a <code>this</code> keyword or a prototype property so cannot be used as
+                    constructor functions.</li>
+            </ul>
+
+
+        </section>
+    </main>
+
+</body>
+
+</html>
