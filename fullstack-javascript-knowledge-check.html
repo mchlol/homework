@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knowledge Check - Full-Stack Javascript</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src=""></script>
+
+</head>
+
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#constructors">Objects and Object Constructors</a></li>
+            <li><a href="#factory">Factory Functions & The Module Pattern</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn">^ Top</button></a>
+    </div>
+
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - Back-end JavaScript</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <main id="answers" class="container">
+        <hr>
+
+        <section id="constructors">
+            <h2>Objects and Object Constructors</h2>
+
+            <h3>Write an object constructor and instantiate the object.</h3>
+            <pre>
+            <code>
+                // object constructor:
+            function Cat(name, sound) {
+                this.name = name,
+                this.sound = sound
+            }
+            
+                // instantiate the object
+            const fluffy = new Cat('Fluffy', 'miaow!');
+            </code>
+            </pre>
+
+            <h3>Describe what a prototype is and how it can be used.</h3>
+            <p>
+                A prototype is a property that exists by default on any JavaScript function (all functions are objects).
+                Add methods onto this
+                prototype, and they can be used by any object created using the function as a constructor; such objects
+                are also known as <strong>instances</strong>.</p>
+
+            <h3>Explain prototypal inheritance.</h3>
+            <p>When an object is created with a constructor, it will inherit any properties and methods from its parent
+                object, which in turn inherits these from its parent and so on back to
+                <code>Object.prototype</code>.<br>
+                When a lookup is performed on an object, it will look
+                first on that object, and if the property is not found, the search will continues on that objects
+                prototype, and so on up
+                the chain until the property is found.
+            </p>
+
+            <h3>What are the basic dos and don'ts of prototypical inheritance?</h3>
+            <p><strong>Don't</strong> define a function directly on an object constructor - unless you want it to be
+                available only on
+                that object. Defining it on the prototype means only defining it once, and not creating multiples of
+                the same function every time a new object is created.<br>
+                <strong>Do</strong> use an objects prototype to define functions. This is so they can be used by all
+                instances of that
+                object,
+                and the function only needs to be defined once. This will keep your files smaller and help you to write
+                clean code.
+            </p>
+
+            <h3>Explain what Object.create does.</h3>
+            <p><code>Object.create(obj)</code> creates an object, where <code>obj</code> is the object you would like to
+                inherit
+                properties from.</p>
+
+            <h4>Notes</h4>
+            <ul>
+                <li>Any object can only have ONE prototype and can only inherit from ONE object prototype at a
+                    time.</li>
+                <li>Arrow functions do not have a <code>this</code> keyword or a prototype property so cannot be used as
+                    constructor functions.</li>
+            </ul>
+
+
+        </section>
+
+        <hr>
+
+        <section id="factory">
+            <h2>Factory Functions & The Module Pattern</h2>
+            <small>Further info found at <a href="https://css-tricks.com/understanding-javascript-constructors/"
+                    target="_blank">CSS Tricks</a></small>
+
+            <h3>Describe common bugs you might run into using constructors.</h3>
+            <p>
+            <ul>
+                <li>If you forget to use the <code>new</code> keyword, you will actually be setting properties on the
+                    global object.</li>
+                <li>If you return something from the constructor function, an object created by using <code>new</code>
+                    will reference whatever the constructor returned, instead of creating a new instance of the
+                    constructor.</li>
+            </ul>
+            </p>
+
+            <h3>Write a factory method that returns an object.</h3>
+            <p>
+            <pre>
+    <code>const dogMaker = (name,breed) => {
+                const bark = () => console.log("Woof");
+                return { name, breed };
+            }
+
+            const oslow = dogMaker("Oslow","Golden Retriever");
+            
+            console.log(oslow) // { name: "Oslow", breed: "Golden Retriever" }
+
+     </code>
+</pre>
+            </p>
+
+            <h3>Explain how scope works in JavaScript (bonus points if you can point out what ES6 changed!).</h3>
+            <p>
+                In JavaScript, variables that are declared globally are accessible within the global objects including
+                any functions,
+                loops, etc. Variables that are declared within a function are only accessible <strong>within that
+                    function</strong>, or if declared within a block they are only accessible within that block - they
+                cannot be accessed globally or within other functions.<br>
+                Variables declared with <code>var</code> are <strong>function scoped</strong>, but the new variable
+                declaration methods introduced in ES6, <code>let</code> and <code>const</code> are <strong>block
+                    scoped</strong>. This means that if you use var in a loop, the var variable will end up globally
+                scopes as there's no function. A let or const variable will be scoped to the block, meaning if it's
+                declared within a function or any kind of loop, it will remain confined to that block and is not
+                accessible in the global object or anywhere but in that block.
+            </p>
+
+            <h3>Explain what Closure is and how it impacts private functions & variables.</h3>
+            <p>
+                When a function, like a constructor, contains some other functions and returns one of them, only the
+                returned function can be called. Any other function defined within that constructor is
+                <strong>private</strong>. They remain confined to the block they were defined in (the constructor).
+                However, the <em>returned</em> function can still access them. That is because it has
+                <strong>closure</strong> over them.
+            </p>
+
+            <figure>
+                <blockquote
+                    cite="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36">
+                    "Not only should you know what a closure is, you should know why it matters, and be able to
+                    easily answer several possible use-cases for closures."</blockquote>
+                <figcaption>
+                    &mdash; Eric Elliot, <cite><a
+                            href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36"
+                            target="_blank">Master the JavaScript Interview: What is a Closure?</a></cite>
+                </figcaption>
+            </figure>
+
+            <h3>Describe how private functions & variables are useful.</h3>
+            <p>
+                Private variables and functions are useful because instead of having a bunch of things all over your
+                global object, you can just have a few functions that contain your variables which protects them from
+                being accidentally overwritten and keeps things neat and tidy. It makes your code easier to read, and
+                easier to refactor where required.
+            </p>
+
+            <h3>Use inheritance in objects using the factory pattern.</h3>
+            <p></p>
+
+            <h3>Explain the module pattern.</h3>
+            <p></p>
+
+            <h3>Describe IIFE. What does it stand for?</h3>
+            <p></p>
+
+            <h3>Briefly explain namespacing and how it's useful.</h3>
+            <p></p>
+
+        </section>
+    </main>
+
+</body>
+
+</html>
