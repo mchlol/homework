@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital@0;1&family=Nunito:ital,wght@0,400;0,600;1,400;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 :root {
     --dark: rgb(65, 105, 225);
@@ -28,6 +27,20 @@ p {
 
 .list-container {
     line-height: 1.5;
+}
+
+figure {
+    border: 1px dashed var(--pale);
+    padding: 1em;
+}
+
+blockquote {
+    font-size: 1.5em;
+    text-indent: -0.45em;
+}
+
+figcaption {
+    text-align: right;
 }
 
 a {
@@ -75,6 +88,8 @@ code {
 pre {
     border-radius: 15px;
     max-width: 80%;
+    padding: 0.5em;
+    overflow: scroll;
 }
 
 
