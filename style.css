@@ -40,7 +40,7 @@ blockquote {
 }
 
 figcaption {
-    text-align: right;
+    text-align: center;
 }
 
 a {
@@ -87,9 +87,8 @@ code {
 
 pre {
     border-radius: 15px;
-    max-width: 80%;
     padding: 0.5em;
-    overflow: scroll;
+    white-space: pre-wrap;
 }
 
 
