@@ -118,11 +118,13 @@
             </p>
 
             <h3>Write a factory method that returns an object.</h3>
-            <p>
+            <p>A factory function is just a <strong>function that returns an object</strong>. It does not need to use
+                the <code>new</code> or <code>this</code> keywords. It is in a way a lot simpler and neater than using
+                constructors.
             <pre>
     <code>const dogMaker = (name,breed) => {
                 const bark = () => console.log("Woof");
-                return { name, breed };
+                return { name, breed, bark };
             }
 
             const oslow = dogMaker("Oslow","Golden Retriever");
@@ -171,20 +173,62 @@
 
             <h3>Describe how private functions & variables are useful.</h3>
             <p>
-                Private variables and functions are useful because instead of having a bunch of things all over your
+                Private variables and functions are useful because instead of having a bunch of variables accessible all
+                over your
                 global object, you can just have a few functions that contain your variables which protects them from
-                being accidentally overwritten and keeps things neat and tidy. It makes your code easier to read, and
+                being accessed or overwritten, and keeps things neat and tidy. It makes your code easier to read, and
                 easier to refactor where required.
             </p>
 
             <h3>Use inheritance in objects using the factory pattern.</h3>
-            <p></p>
+            <p>
+                We can use inheritance inside a factory function by creating a new variable with a factory function, and
+                use destructuring syntax to inherit a property or function from the factory.</p>
+
+            <pre>
+    <code>
+        const dogMaker = (name) => {
+            const bark = () => console.log("Woof!");
+            const speak = () => bark();
+            const beCute = () => console.log(`Aww ${name} is so cute!`);
+            return { name, speak, beCute };
+        }
+
+        const oslow = dogMaker("Oslow");
+
+        const cat = (name) => {
+            const { beCute } = dogMaker(name);
+            return { name, beCute };
+        }
+
+        const molly = cat("Molly");
+
+        molly.beCute() // "Aww, Molly is so cute!"  
+    </code>
+</pre>
+            <p>
+
+            </p>
+
+
+
+            <figure>
+                <blockquote>
+                    "Constructor function and class use inheritance by default. But you have to add inheritance to your
+                    factory function manually."
+                </blockquote>
+                <figcaption>
+                    &mdash; Webmound, <cite><a href="https://www.webmound.com/javascript-factory-function-explained/"
+                            target="_blank">Factory Function in JavaScript Explained with Examples</a></cite>
+                </figcaption>
+            </figure>
 
             <h3>Explain the module pattern.</h3>
             <p></p>
 
             <h3>Describe IIFE. What does it stand for?</h3>
-            <p></p>
+            <p>Immediately Invoked Function Expression, or IIFE, is when you write a function and immediately call or
+                invoke it.</p>
 
             <h3>Briefly explain namespacing and how it's useful.</h3>
             <p></p>
@@ -192,6 +236,25 @@
         </section>
     </main>
 
+    <script>
+        const dogMaker = (name) => {
+            const bark = () => console.log("Woof!");
+            const speak = () => bark();
+            const beCute = () => console.log(`Aww ${name} is so cute!`);
+            return { name, speak, beCute };
+        }
+
+        const oslow = dogMaker("Oslow");
+
+        const cat = (name) => {
+            const { beCute } = dogMaker(name);
+            return { name, beCute };
+        }
+
+        const molly = cat("Molly");
+
+
+    </script>
 </body>
 
 </html>
