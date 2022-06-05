@@ -253,7 +253,7 @@
             <p>
                 If we wanted to inherit <em>everything</em> from an object we could do that with
                 <code>Object.assign()</code>. All own and enumerable
-                properties will be copied to the new object.
+                properties will be copied to the new object. It takes two arguments: target and source.
             </p>
             <pre>
     <code>
@@ -278,12 +278,36 @@
 
             <h3>Explain the module pattern.</h3>
             <p>
-
+                In the JavaScript module pattern, we create a function expression and within that block of code we add
+                all the variables and functions needed.
+                This encapsulates all the code within its own scope, so we don't affect the global namespace.<br>
+                If we have
+                a
+                function inside this scope called 'add' and then need to use the name 'add' in a difference context,
+                e.g. add to cart and add two numbers together, as long as they are within separate scopes they will not
+                clash with each other and cause bugs.<br>
+                We then invoke the function as an IIFE (see below) so that we can run it straightaway and can access
+                whatever we need from this function without having to call it multiple times (or at all).
             </p>
 
             <h3>Describe IIFE. What does it stand for?</h3>
             <p>Immediately Invoked Function Expression, or IIFE, is when you write a function and immediately call or
-                invoke it.</p>
+                invoke it. In other words, the function runs as soon as it is assigned. </p>
+            <pre>
+    <code>
+    const normalFunction = function() {
+        console.log('This function has to be invoked')
+    }
+                
+    normalFunction(); // invoking the function
+                
+    const iifeFunction = (function() {
+        console.log('This function is invoked immediately!')
+    })();
+                
+    // we don't have to call iifeFunction(), it already ran!
+</code>
+</pre>
 
             <h3>Briefly explain namespacing and how it's useful.</h3>
             <p></p>
