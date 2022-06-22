@@ -323,18 +323,33 @@
             <h2 id="classes">JavaScript Classes</h2>
 
             <h3>Describe the pros and cons of using classes in JavaScript.</h3>
-            <p>JavaScript class syntax hasn't always existed, but has always had the ability to use prototypes and
-                inheritance.
+            <h4>Pros</h4>
+            <p>Classes make it easier to create multiple objects sharing the same methods without having to add them to
+                the prototype separately. This shorter syntax means cleaner code.<br>
+                Unlike with a constructor function, if you try to call a class without the new keyword you will get an
+                error. This makes it easier to debug.</p>
+            <h4>Cons</h4>
+            <p></p>While functions are hoisted, classes are not. So they cannot be referenced before they are
+            declared.<br>
+            Class methods are non-enumerable so can't be accessed in a for…in loop or Object.keys() method.
             </p>
 
             <h3>Briefly discuss how JavaScript's object creation differs from a language like Java or Ruby.</h3>
-            <p></p>
+            <p>
+                In JavaScript, you can just create an object, e.g. by using an object literal. In Java, objects must be
+                created from a class.
+            </p>
 
             <h3>Explain the differences between using a class to define a constructor and other prototype methods.</h3>
-            <p></p>
+            <p>
+                Classes are <em>syntactic sugar</em> over constructor functions, with some added enhancements.
+            </p>
 
             <h3>Explain what “getters” & “setters” are.</h3>
-            <p></p>
+            <p>
+                Getters and setters are accessor properties that set and get the values of an object. A getter
+                calculates the value, a setter assigns the value.
+            </p>
 
             <h3>Understand what computed names and class fields are.</h3>
             <p></p>
