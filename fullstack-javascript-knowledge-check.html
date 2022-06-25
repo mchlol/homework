@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="./homework.ico">
-    <script src=""></script>
 
 </head>
 
@@ -28,11 +27,13 @@
     </nav>
 
     <div>
-        <a href="#nav"><button class="top-btn">^ Top</button></a>
+        <a href="#nav"><button class="top-btn"><span class="material-icons">
+                    arrow_upward
+                </span></button></a>
     </div>
 
     <div id="header" class="container">
-        <h1 id="top">Knowledge Check - Back-end JavaScript</h1>
+        <h1 id="top">Knowledge Check - Full-stack JavaScript</h1>
         <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
     </div>
 
@@ -324,27 +325,97 @@
             <h2 id="classes">JavaScript Classes</h2>
 
             <h3>Describe the pros and cons of using classes in JavaScript.</h3>
-            <h4>Pros</h4>
-            <p>Classes make it easier to create multiple objects sharing the same methods without having to add them to
-                the prototype separately. This shorter syntax means cleaner code.<br>
-                Unlike with a constructor function, if you try to call a class without the new keyword you will get an
-                error. This makes it easier to debug.</p>
-            <h4>Cons</h4>
-            <p></p>While functions are hoisted, classes are not. So they cannot be referenced before they are
-            declared.<br>
-            Class methods are non-enumerable so can't be accessed in a for…in loop or Object.keys() method.
-            </p>
+
+            <ul>
+                <h4>Pros:</h4>
+                <li>
+                    Classes make it easier to create multiple objects sharing the same methods without having to add
+                    them to the prototype separately. This shorter syntax means cleaner code.
+                </li>
+                <li>
+                    Unlike with a constructor function, if you try to call a class without the new keyword you will
+                    actually get
+                    a <code>TypeError</code> which will help avoid bugs.
+                </li>
+            </ul>
+
+            <ul>
+                <h4>Cons:</h4>
+                <li>
+                    While classes are hoisted, like functions, their values are not initialised. So they cannot be
+                    referenced before they are
+                    declared.
+                </li>
+                <li>Class methods are non-enumerable so can't be accessed in a for…in loop or Object.keys() method.</li>
+            </ul>
+
+            <figure>
+                <blockquote>
+                    A common pitfall for novice developers is to put a comma between class methods, which would result
+                    in a syntax error.<br>
+                    The notation here is not to be confused with object literals. Within the class, no commas are
+                    required.
+                </blockquote>
+                <figcaption>&mdash; JavaScript.info, <cite><a href="https://javascript.info/class"
+                            target="_blank">Classes</a></cite>
+                </figcaption>
+            </figure>
 
             <h3>Briefly discuss how JavaScript's object creation differs from a language like Java or Ruby.</h3>
             <p>
-                In JavaScript, you can just create an object, e.g. by using an object literal. In Java, objects must be
-                created from a class.
+                In Java and Ruby, all
+                objects are instances of a class. In JavaScript, you can just create an object, e.g. by using an object
+                literal.
             </p>
 
             <h3>Explain the differences between using a class to define a constructor and other prototype methods.</h3>
             <p>
                 Classes are <em>syntactic sugar</em> over constructor functions, with some added enhancements.
             </p>
+            <h4>Object constructor:</h4>
+            <pre>
+            <code>
+                const Animal = function(name, sound) {
+                    this.name = name,
+                    this.sound = sound
+                    this.speak = function() {
+                        console.log(this.sound);
+                    }
+                }
+            </code>
+            </pre>
+
+            <h4>Factory function:</h4>
+            <pre>
+            <code>
+                const Animal = (name, sound) => {
+                    const speak = () => console.log(sound);
+                    return { name, sound, speak };
+                }
+            </code>
+            </pre>
+
+            <h4>Class:</h4>
+            <pre>
+            <code>
+                class Animal {
+                    name;
+                    constructor(name,sound) {
+                        this.name = name;
+                        this.sound = sound;
+                    }
+
+                    speak() {
+                        console.log(this.sound);
+                    }
+                }
+            </code>
+            </pre>
+            <p>The biggest difference is in when they are called. Both are
+                called with <code>new Animal</code>, right? But if you call a class without <code>new</code>, you'll get
+                a <code>TypeError</code>. Object constructors and factory functions don't do that, making it much easier
+                to introduce
+                bugs into your code.</p>
 
             <h3>Explain what “getters” & “setters” are.</h3>
             <p>
@@ -353,19 +424,61 @@
             </p>
 
             <h3>Understand what computed names and class fields are.</h3>
+            <h4>Computed Names</h4>
+            <p>Computed names are expressions within square brackets that can be evaluated to use as variable names.<br>
+                If we have an expression within brackets <code>['say' + 'Hi'()]</code>, at run time the property name
+                will be <code>sayHi()</code>.</p>
+            <h4>Class Fields</h4>
             <p>
-
+                Class fields are another way to add properties to the class. Declaring fields can be easier to read than
+                defining properties in the constructor.
             </p>
 
             <h3>Describe function binding.</h3>
             <p>
-
+                Function binding is a way of ensuring <code>this</code> always refers to the object and is not lost or
+                assigned to somethng else (often the window object) when
+                the functin is called in another context.
             </p>
 
             <h3>Be able to use inheritance with classes.</h3>
             <p>
-
+                To create a class that inherits properties and methods from another class, it must be called with
+                <code>extends</code> and then the properties are accessed through <code>super</code>.
             </p>
+            <pre>
+            <code>
+                class Animal {
+                    constructor(name) {
+                        this.name = name;
+                    }
+                    
+                    speak() {
+                        console.log(`${this.name} makes a noise.`);
+                    }
+                }
+
+                class Dog <span class="syntax-highlight">extends</span> Animal {
+                    constructor(nme) {
+                        <span class="syntax-highlight">super</span>(name);
+                    }
+
+                    speak() {
+                        console.log(`${this.name} barks.`);
+                    }
+                }
+            </code>
+            </pre>
+            <figure>
+                <blockquote>If there is a constructor in the subclass it has to call <code>super</code> before using
+                    <code>this</code>.
+                </blockquote>
+                <figcaption>
+                    MDN Web Docs, <cite><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#sub_classing_with_extends"
+                            target="_blank">Classes</a></cite>
+                </figcaption>
+            </figure>
 
             <h3>Briefly talk about the conflict in JS with functional programming and classes.</h3>
             <p>
@@ -375,6 +488,8 @@
     </main>
 
     <script>
+        // example of factory functions
+
         const dogMaker = (name) => {
             const bark = () => console.log("Woof!");
             const speak = () => bark();
@@ -392,6 +507,38 @@
         const molly = catMaker("Molly");
 
         const pandy = Object.assign({}, oslow);
+
+
+        // different constructor & prototype methods
+
+        const AnimalConstructor = function (name, sound) {
+            this.name = name,
+                this.sound = sound,
+
+                // add a method
+                this.speak = function () {
+                    console.log(this.sound);
+                }
+        }
+
+        const AnimalFactory = (name, sound) => {
+            // add a method
+            const speak = () => console.log(sound);
+            return { name, sound, speak };
+        }
+
+        class AnimalClass {
+            // initialise properties
+            constructor(name, sound) {
+                this.name = name;
+                this.sound = sound;
+            }
+
+            // add a method
+            speak() {
+                console.log(this.sound);
+            }
+        }
     </script>
 </body>
 
