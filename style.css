@@ -5,6 +5,7 @@
     --mid: rgb(115, 157, 255);
     --pale: rgb(224, 231, 255);
     --bg: rgb(255, 255, 255);
+    --highlight: palevioletred;
 }
 
 html {
@@ -66,6 +67,7 @@ h4 {
 
 h4 {
     padding: 0;
+    color: var(--dark);
 }
 
 h1,
@@ -194,4 +196,12 @@ section h2 {
 
 .temp {
     color: #ff0000;
+}
+
+.syntax-comment {
+    color: grey;
+}
+
+.syntax-highlight {
+    color: var(--highlight);
 }
