@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Knowledge Check - Full-Stack Javascript</title>
+    <title>Knowledge Check - Organising JavaScript Code</title>
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,6 +23,7 @@
             <li><a href="#constructors">Objects and Object Constructors</a></li>
             <li><a href="#factory">Factory Functions & The Module Pattern</a></li>
             <li><a href="#classes">JavaScript Classes</a></li>
+            <li><a href="#modules">ES6 Modules</a></li>
         </ul>
     </nav>
 
@@ -351,10 +352,10 @@
 
             <figure>
                 <blockquote>
-                    A common pitfall for novice developers is to put a comma between class methods, which would result
+                    "A common pitfall for novice developers is to put a comma between class methods, which would result
                     in a syntax error.<br>
                     The notation here is not to be confused with object literals. Within the class, no commas are
-                    required.
+                    required."
                 </blockquote>
                 <figcaption>&mdash; JavaScript.info, <cite><a href="https://javascript.info/class"
                             target="_blank">Classes</a></cite>
@@ -447,31 +448,38 @@
                 <code>extends</code> and then the properties are accessed through <code>super</code>.
             </p>
             <pre>
-            <code>
-                class Animal {
-                    constructor(name) {
-                        this.name = name;
-                    }
-                    
-                    speak() {
-                        console.log(`${this.name} makes a noise.`);
-                    }
-                }
+<code>
+<span class="syntax-comment">// create a class with constructor and a method</span>
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        
+        speak() {
+            console.log(`${this.name} makes a noise.`);
+        }
+    }
 
-                class Dog <span class="syntax-highlight">extends</span> Animal {
-                    constructor(nme) {
-                        <span class="syntax-highlight">super</span>(name);
-                    }
+<span class="syntax-comment">// create a new class that extends the class we want to inherit from</span>
+    class Dog <span class="syntax-highlight">extends</span> Animal {
+        constructor(name) {
+            <span class="syntax-comment">// call the super class constructor and pass in the name parameter</span>
+            <span class="syntax-highlight">super</span>(name);
+        }
 
-                    speak() {
-                        console.log(`${this.name} barks.`);
-                    }
-                }
-            </code>
+        speak() {
+            <span class="syntax-comment">// we can use super here too</span>
+            super.speak();
+            console.log(`${this.name} barks.`);
+        }
+    }
+</code>
             </pre>
+            <p>Using super in the subclass method means the original inherited function will run first, then any new
+                method that has been changed on the subclass.</p>
             <figure>
-                <blockquote>If there is a constructor in the subclass it has to call <code>super</code> before using
-                    <code>this</code>.
+                <blockquote>"If there is a constructor in the subclass it has to call <code>super</code> before using
+                    <code>this</code>."
                 </blockquote>
                 <figcaption>
                     MDN Web Docs, <cite><a
@@ -480,10 +488,57 @@
                 </figcaption>
             </figure>
 
+            <p> To inherit from a regular object we cannot use <code>extends</code>, but we can create the class and
+                then use
+                <code>Object.setPrototypeOf()</code>.
+            </p>
+
             <h3>Briefly talk about the conflict in JS with functional programming and classes.</h3>
             <p>
-
+                JavaScript is a functional programming language, and it doesn't technically include classes like object
+                oriented
+                programming languages do. The class syntax was developed to make it more familiar for developers coming
+                from OOP languages to work with. The conflict is that functional programming favours composition over
+                inheritance -
+                but OOP favours inheritance over composition.
             </p>
+        </section>
+
+        <section>
+            <h2 id="modules">ES6 Modules</h2>
+
+            <h3>Explain what npm is and where it was commonly used before being adopted on the frontend.</h3>
+            <p></p>
+
+            <h3>Describe what npm init does and what package.json is.</h3>
+            <p></p>
+
+            <h3>Know how to install packages using npm.</h3>
+            <p></p>
+
+            <h3>Describe what a JavaScript module bundler like webpack is.</h3>
+            <p></p>
+
+            <h3>Explain what the concepts “entry” and “output” mean as relates to webpack.</h3>
+            <p></p>
+
+            <h3>Briefly explain what a development dependency is.</h3>
+            <p></p>
+
+            <h3>Explain what “transpiling code” means and how it relates to frontend development.</h3>
+            <p></p>
+
+            <h3>Briefly describe what a task runner is and how it's used in frontend development.</h3>
+            <p></p>
+
+            <h3>Describe how to write an npm automation script.</h3>
+            <p></p>
+
+            <h3>Explain one of the main benefits of writing code in modules.</h3>
+            <p></p>
+
+            <h3>Explain “named exports” and “default exports”.</h3>
+            <p></p>
         </section>
     </main>
 
