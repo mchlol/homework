@@ -508,37 +508,87 @@
             <h2 id="modules">ES6 Modules</h2>
 
             <h3>Explain what npm is and where it was commonly used before being adopted on the frontend.</h3>
-            <p></p>
+            <p>
+                npm, or node package manager, is used to install packages such as javascript and css libraries into your
+                project, without having to download and manually link them.<br>
+                It was originally used for node, an environment that can run JavaScript outside of a web browser.
+            </p>
 
-            <h3>Describe what npm init does and what package.json is.</h3>
-            <p></p>
+            <h3>Describe what <code>npm init</code> does and what <code>package.json</code> is.</h3>
+            <p>
+                <code>npm init</code> initialises npm; on the command line it prompts you to fill in some information
+                about your project and then creates a node_modules folder to access the library, and a
+                <code>package.json</code> file. The
+                <code>package.json</code> keeps track of any dependencies (such as libraries) in use within your
+                project.
+            </p>
+
 
             <h3>Know how to install packages using npm.</h3>
-            <p></p>
+            <p>
+                First, navigate to your project folder on the command line and run <code>npm init</code>.<br>
+                Then run
+                <code>npm install &lt;package name&gt; --save</code>. This will download the package into the
+                <code>node_modules</code> folder and creates your <code>package.json</code> file.<br>
+                npm can be used to install TypeScript React, Tailwind, Sass, and all sorts of libraries and tools.
+            </p>
 
             <h3>Describe what a JavaScript module bundler like webpack is.</h3>
-            <p></p>
+            <p>
+                Webpack works by importing modules of code into our project. Node has access to the computer's file
+                system, so running webpack will build one file with
+                all the modules we need, and we can just link that file, without having to find and link all the
+                libraries and things we need manually.
+            </p>
 
             <h3>Explain what the concepts “entry” and “output” mean as relates to webpack.</h3>
-            <p></p>
+            <p>
+                The "entry" is the file in which <strong>we write</strong> our JavaScript and link any modules we want
+                to use. The
+                "output" is the file <strong>built by webpack</strong> when it is run. This is the file we link in our
+                project.
+            </p>
 
             <h3>Briefly explain what a development dependency is.</h3>
-            <p></p>
+            <p>
+                A development dependency is a library or module that we reference and use in the js or css file we
+                write. We can't just link that file, because it will contain things the browser can't find or interpret.
+                A bundler, like webpack, bundles all the dependencies into the file it builds. Dependencies have to be
+                including in the <code>package.json</code> file or they won't work.<br>
+                Production dependencies go under <code>dependencies</code> and
+                development dependencies such as testing and linting go in <code>devDependencies</code>.
+            </p>
 
             <h3>Explain what “transpiling code” means and how it relates to frontend development.</h3>
-            <p></p>
+            <p>
+                Transpiling converts code from one language into another similar language. When we run Webpack we can
+                use Babel to transpile our JavaScript to ES5 (an older version of JavaScript) so any new features we are
+                using can still be understood by
+                out of
+                date browsers.
+            </p>
 
             <h3>Briefly describe what a task runner is and how it's used in frontend development.</h3>
-            <p></p>
+            <p>
+                <span class="temp">A taskrunner automates...a task...</span>
+            </p>
 
             <h3>Describe how to write an npm automation script.</h3>
-            <p></p>
+            <p>
+                <span class="temp"><code>--watch</code> is an example of an automation script?</span>
+            </p>
 
             <h3>Explain one of the main benefits of writing code in modules.</h3>
-            <p></p>
+            <p>
+                <span class="temp">Reusing code, separating code, private variables</span>
+            </p>
 
             <h3>Explain “named exports” and “default exports”.</h3>
-            <p></p>
+            <p>
+                <strong>Default exports</strong> can be exported one at a time, if you have multiple functions in one
+                file you can specifically export
+                them at the same time by using <strong>named exports</strong>.
+            </p>
         </section>
     </main>
 
