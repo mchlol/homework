@@ -535,17 +535,18 @@
 
             <h3>Describe what a JavaScript module bundler like webpack is.</h3>
             <p>
-                Webpack works by importing modules of code into our project. Node has access to the computer's file
+                Webpack works by importing modules of code into your project. Node has access to the computer's file
                 system, so running webpack will build one file with
-                all the modules we need, and we can just link that file, without having to find and link all the
-                libraries and things we need manually.
+                all the modules needed, and you can just link that file, without having to find and link all the
+                libraries and things you need manually.
             </p>
 
             <h3>Explain what the concepts “entry” and “output” mean as relates to webpack.</h3>
             <p>
                 The "entry" is the file in which <strong>we write</strong> our JavaScript and link any modules we want
                 to use. The
-                "output" is the file <strong>built by webpack</strong> when it is run. This is the file we link in our
+                "output" is the file <strong>built by webpack</strong> when it is run. This is the file we link as the
+                <code>src</code> in our
                 project.
             </p>
 
@@ -554,7 +555,7 @@
                 A development dependency is a library or module that we reference and use in the js or css file we
                 write. We can't just link that file, because it will contain things the browser can't find or interpret.
                 A bundler, like webpack, bundles all the dependencies into the file it builds. Dependencies have to be
-                including in the <code>package.json</code> file or they won't work.<br>
+                included in the <code>package.json</code> file or they won't work.<br>
                 Production dependencies go under <code>dependencies</code> and
                 development dependencies such as testing and linting go in <code>devDependencies</code>.
             </p>
@@ -570,12 +571,18 @@
 
             <h3>Briefly describe what a task runner is and how it's used in frontend development.</h3>
             <p>
-                <span class="temp">A taskrunner automates...a task...</span>
+                A task runner is a script we run to automate a process, such as transpiling and building js and css
+                files or running tests.
             </p>
 
             <h3>Describe how to write an npm automation script.</h3>
             <p>
-                <span class="temp"><code>--watch</code> is an example of an automation script?</span>
+                In the "scripts" section of your <code>package.json</code> file, you can list any automation scripts
+                such as;<br>
+                <code>"build": "webpack --progress --mode=production</code><br>
+                Then in the terminal run <code>$ npm run build</code> to run webpack and show the percent progress. The
+                <code>--mode=production</code> minimises the code for production. Then to actually run the script go to
+                the terminal and run <code>npm run build</code>.
             </p>
 
             <h3>Explain one of the main benefits of writing code in modules.</h3>
