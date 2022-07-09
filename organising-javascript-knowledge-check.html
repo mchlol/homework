@@ -743,6 +743,21 @@
             </p>
 
             <h3>How would you track errors in bundled source code?</h3>
+            <p>
+                Using source maps, when there's an error in our code the source map will point to the file that contains
+                the
+                error, instead of the bundled file. The <code>devtool</code> option controls if and how source maps are
+                generated. There are <a href="https://webpack.js.org/configuration/devtool/" target="_blank">many, many
+                    ways</a> to do this.
+            </p>
+            <p>Set the devtool method in the <code>webpack.config.js</code> file, between <code>entry</code>, and
+                <code>plugins</code>:<br>
+                <code>devtool: 'inline-source-map'</code><br>
+                Then run <code>npm run build</code>.<br>
+                Now if there's an error in one of the files, the console error will reference that file and line number,
+                instead of generically pointing at the bundled file which is no help at all.
+            </p>
+
         </section>
     </main>
 
