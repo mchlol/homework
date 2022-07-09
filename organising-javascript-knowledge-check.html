@@ -598,6 +598,152 @@
                 them at the same time by using <strong>named exports</strong>.
             </p>
         </section>
+
+        <section>
+            <h2 id="webpack">Webpack</h2>
+            <h3>How do you load CSS using webpack?</h3>
+            <p>
+                You will need to install style-loader and css-loader:<br>
+                <code>npm install --save-dev style-loader css-loader</code><br>
+                Then, add them to the module configuration in
+                the <code>webpack.config.js</code>.
+            </p>
+            <pre>
+<code>...
+        module: {
+            rules: [
+              {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+              },
+            ],
+        },
+...
+            </code>
+</pre>
+
+            <p>
+                <code>style-loader</code> is a package used to inject css into the DOM.<br>
+                <code>css-loader</code> interprets
+                <code>@import</code> and <code>url()</code> like <code>import/require</code> and will resolve them.
+            </p>
+
+            <figure>
+                <blockquote>"Webpack uses a regular expression to determine which files it should look for and serve to
+                    a specific loader. In this case, any file that ends with .css will be served to the style-loader and
+                    the css-loader."</blockquote>
+                <figcaption>
+                    Webpack.js.org, <cite><a href="https://webpack.js.org/guides/asset-management/">"Asset
+                            Management"</a></cite>
+                </figcaption>
+            </figure>
+
+            <p>
+                Next, import your <code>style.css</code> file from the <code>src</code> folder at the top of your
+                <code>index.js</code> file.<br>
+                <code>import './style.css';</code><br>
+                Finally, run the build command from the terminal.<br>
+                <code>npm run build</code>
+            </p>
+
+            <h3>How do you load images using webpack?</h3>
+            <p>Add an image to your <code>src</code> folder, then add a rule to the module configuration in
+                <code>webpack.config.js</code> to handle these files, under the rule for css.
+            </p>
+            <pre>
+<code>...
+        {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+        },
+...
+            </code>
+</pre>
+
+            <p>
+                Put the image in your <code>src</code> folder, then import it in the top of your <code>index.js</code>
+                file:<br>
+                <code>import Image from './image.png';</code><br>
+                Use the image however you wish then run the build command.
+            </p>
+
+            <h3>How do you load fonts using webpack?</h3>
+            <p>
+                Add a rule to the <code>webpack.config.js</code> to handle font files:</p>
+            <pre>
+<code>
+    {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+</code>
+</pre>
+            <p>
+                Add the font files you wish to use to your <code>src</code> folder, then add a <code>@font-face</code>
+                declaration to the <code>style.css</code> file.
+            </p>
+            <pre>
+<code>
+    @font-face {
+        font-family: 'MyFont';
+        src: url('./my-font.otf') format('<span class="syntax-highlight">opentype</span>');
+    }
+</code>
+</pre>
+            <p>It's important to reference the <code>format</code> correct or the font will import, but won't work. I
+                learned this the hard way when I referenced <code>format('otf')</code> instead of
+                <code>format('opentype')</code>.<br>
+            </p>
+
+            <h3>How do you load data using webpack?</h3>
+            <p>Loading data from JSON doesn't require a loader as it's built in, but if you want to load data from CSV
+                or XML we can install loaders for these:<br>
+                <code>npm install --save-dev csv-loader xml-loader</code><br>
+                As usual add a module rule:
+            </p>
+            <pre>
+<code>
+    {
+        test: /\.(csv|tsv)$/i,
+        use: ['csv-loader'],
+      },
+      {
+        test: /\.xml$/i,
+        use: ['xml-loader'],
+      },
+</code>
+</pre>
+            <p>Note that unlike what we did with the css file, <span class="temp">[explain this in the css
+                    section]</span> there is a regex and loader rule definition for
+                CSV/TSV, and a separate one for XML. </p>
+
+            <p>
+                Add the data files to the <code>src</code> folder and import them into the top of the
+                <code>index.js</code> file. Then go ahead and run the build command again. The imported data will
+                contained parsed JSON. For other file formats such as <code>yaml</code> you can install a parser:<br>
+                <code>npm install yamljs --save-dev</code><br>
+                Configure it in the <code>webpack.config.js</code> file:<br>
+                <code>const yaml = require('yamljs');</code><br>
+                Then add a module rule:
+            </p>
+            <pre>
+<code>
+    {
+        test: /\.yaml$/i,
+        type: 'json',
+        parser: {
+          parse: yaml.parse,
+        },
+      },
+</code>
+</pre>
+            <p>Import it into the <code>index.js</code> file:<br>
+                <code>import yaml from './data.yaml';</code><br>
+                Use it however you require then run the build command.
+            </p>
+
+            <h3>How would you track errors in bundled source code?</h3>
+        </section>
     </main>
 
     <script>
