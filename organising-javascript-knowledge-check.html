@@ -747,15 +747,36 @@
                 Using source maps, when there's an error in our code the source map will point to the file that contains
                 the
                 error, instead of the bundled file. The <code>devtool</code> option controls if and how source maps are
-                generated. There are <a href="https://webpack.js.org/configuration/devtool/" target="_blank">many, many
-                    ways</a> to do this.
+                generated.
             </p>
             <p>Set the devtool method in the <code>webpack.config.js</code> file, between <code>entry</code>, and
                 <code>plugins</code>:<br>
                 <code>devtool: 'inline-source-map'</code><br>
+                (<a href="https://webpack.js.org/configuration/devtool/" target="_blank">See this list</a> of
+                the different devtool methods available).<br>
                 Then run <code>npm run build</code>.<br>
                 Now if there's an error in one of the files, the console error will reference that file and line number,
                 instead of generically pointing at the bundled file which is no help at all.
+            </p>
+
+            <h3>Alternatives to running <code>npm run build</code> every five seconds</h3>
+            <h4>Watching files</h4>
+            <p>In the <code>package.json</code> file we can add a script that, when we run it in the terminal, will
+                "watch" our file for changes.</p>
+            <pre>
+<code>
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        <span class="syntax-highlight">"watch": "webpack --watch"</span>,
+        "build": "webpack"
+      },
+</code>
+</pre>
+            <p>Run <code>npm run watch</code> once in the terminal, and it will continue to run,
+                watching for every
+                time we save a file in the project, and rebuilding for us automatically.<br>
+                To exit the command, press
+                <code>ctrl+C</code>.
             </p>
 
         </section>
