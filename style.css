@@ -44,7 +44,12 @@ blockquote {
     text-indent: -0.45em;
 }
 
-figcaption {
+img {
+    margin-top: 1em;
+}
+
+figcaption,
+blockquote {
     text-align: center;
 }
 
