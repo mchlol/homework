@@ -36,7 +36,7 @@
     </div>
 
     <div id="header" class="container">
-        <h1 id="top">Knowledge Check - Full-stack JavaScript</h1>
+        <h1 id="top">Knowledge Check - Organising JavaScript Code</h1>
         <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
     </div>
 
@@ -791,18 +791,81 @@
 
         <section>
             <h2 id="principles">OOP Principles</h2>
+
+            <p>The SOLID principles are:</p>
+            <ul>
+                <li>Single responsibility principle</li>
+                <li>Open&sol;closed principle</li>
+                <li>Liskov substitution principle</li>
+                <li>Interface segregation principle</li>
+                <li>Dependency Inversion principle</li>
+            </ul>
+
             <h3>Explain the “Single Responsibility Principle”.</h3>
-            <p>The "Single Responsibility Principle" means that any object, function, etc. should only be responsible
+            <p>The "Single Responsibility Principle" (SRP) means that any object, function, etc. should only be
+                responsible
                 for one thing. The idea is to have separation of concerns so that one piece of code can be modified or
                 extended,
                 without having to make the same changes in multiple places or risk breaking the code by changing
-                something. Breaking your code into smaller components will make your code more easily maintained. </p>
+                something. Breaking your code into smaller components will make your code more resilient and easily
+                maintained. <br>
+                E.g. functions for writing to the DOM should be separate from creating objects, or logic to perform
+                other tasks.</p>
 
             <h3>Briefly explain the additional SOLID principles.</h3>
-            <p></p>
+            <h4>Open/closed principle - OCP</h4>
+            <p>Classes should be <strong>open</strong> to extension, but <strong>closed</strong> to modification. We
+                should be able to <em>extend</em> a class or add new methods to it <em>without modifying</em> the
+                original class.</p>
+
+            <h4>Liskov substitution principle - LSP</h4>
+            <p>Objects of a parent class should be able to be used where a subclass is used, without breaking
+                functionality.</p>
+
+            <h4>Interface segregation principle - ISP</h4>
+            <p>In JavaScript, the 'interface' can be considered the class properties and methods. The ISP means that a
+                client should not be exposed to methods it doesn't need.<br>
+                A parent should start off as
+                more basic and general, where its children can get more specific. Passing along methods that will never
+                be used is a violation of the ISP, and creates bloated and clunky interfaces.</p>
+
+
+            <figure>
+                <blockquote>"... start on the most general specialization and then, on each level of the inheritance, we
+                    add specific actions that the interface needs. The following diagram shows this idea."<br>
+
+                    <img src="./SOLID-ISP.png" alt="flowchart diagram showing interfaces increasing in specificity" />
+
+                </blockquote>
+                <figcaption>
+                    Josué Rodríguez, <cite><a
+                            href="https://dev.to/josuerodriguez98/interface-segregation-principle-2jnk">"Interface
+                            Segregation Principle"</a></cite>
+                </figcaption>
+            </figure>
+
+
+            <h4>Dependency inversion principle - DIP</h4>
+            <p>A dependency is when one class relies on another, also known as 'coupling'. The DIP states that,
+                "high-level modules should not depend on low-level modules."<br>
+                If something were to change in one module, it could break functionality of the other.
+            </p>
 
             <h3>Explain what “tightly coupled” objects are and why we want to avoid them.</h3>
-            <p></p>
+            <p>Tightly coupled objects "know" each other - and depend on each other. This means if one changes, it will
+                affect the other and can cause unexpected behaviour. To get around
+                this we can abstract away parts of the functionality, meaning that our higher level functions can
+                operate the
+                same way even when lower level parts have changed.</p>
+
+            <blockquote>
+                "Recall that one of the goals when creating highly scalable and maintainable JavaScript applications is
+                that any
+                module can be easily swapped out at any time for a different module."
+            </blockquote>
+            <figcaption>Alex Castrounis, <cite><a
+                        href="https://web.archive.org/web/20200810210808/https://medium.com/@alexcastrounis/how-to-write-highly-scalable-and-maintainable-javascript-coupling-c860787dbdd4">"How
+                        to Write Highly Scalable and Maintainable JavaScript: Coupling"</a></cite></figcaption>
         </section>
     </main>
 
