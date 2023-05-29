@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Knowledge Check - JavaScript in the Real World</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="./homework.ico">
+
+</head>
+
+
+<body>
+
+    <nav id="nav">
+        <ul>
+            <li><a class="home-link" href="index.html">Home</a></li>
+            <li><a href="#linting">Linting</a></li>
+            <li><a href="#dynamic-interactions">Dynamic User Interface Interactions</a></li>
+            <li><a href="#form-validation">Form Validation with JavaScript</a></li>
+            <li><a href="#es6">What is ES6?</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <a href="#nav"><button class="top-btn"><span class="material-icons">
+                    arrow_upward
+                </span></button></a>
+    </div>
+
+    <div id="header" class="container">
+        <h1 id="top">Knowledge Check - Organising JavaScript Code</h1>
+        <p>Homework for <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <main id="answers" class="container">
+        <hr>
+
+        <section id="linting">
+            <h2>Linting</h2>
+
+            <h3>What is linting?</h3>
+            <p>Linting is using an automated tool to scan your code for syntax errors and style rules as you go. It's a
+                little bit like a spelling and grammar checker, but for your code.</p>
+
+            <h3>Which problems can linting prevent?</h3>
+            <p>Linting can catch errors before they become bugs. E.g. you could set up your linter to change all
+                variable declarations from <code>var</code> to <code>let</code>, or even to change all variable
+                declarations to <code>const</code> to avoid the risk of overwriting a variable or polluting the global
+                namespace. It can pick out missing semi-colons or braces, or notify you when you have declared a
+                variable but not used it.
+            </p>
+
+            <h3>Why should you use Prettier?</h3>
+            <p>Prettier differs from a linter in that it does not check for errors, but automatically fixes things like
+                spacing and indentation. It does what it says on the tin - makes your code
+                <em>prettier</em>. This makes it much more human readable.
+            </p>
+        </section>
+
+        <hr>
+
+        <section id="dynamic-interactions">
+            <h2>Dynamic User Interface Interactions</h2>
+            <h3>What are some different types of navigation menus?</h3>
+            <h3>What are the alternatives to hamburger menus?</h3>
+            <h3>What are the downsides of hamburger menus?</h3>
+        </section>
+
+        <section id="form-validation">
+            <h2>Form Validation with JavaScript</h2>
+            <h3>Understand the importance of validating HTML forms before submitting them to a server.</h3>
+            <h3>Describe the two types of client-side form validation, built-in form validation and validation using
+                JavaScript.</h3>
+            <h3>Understand JavaScript Constraint Validation API provides more control and customization of form
+                validation.</h3>
+            <h3>Use JavaScript to write custom error messages and add custom styling to the errors.</h3>
+            <h3>Understand forms can also be validated without using Constraint Validation API, which is useful in
+                certain cases.</h3>
+        </section>
+
+        <section id="es6">
+            <h2>What is ES6?</h2>
+        </section>
+
+
+    </main>
+
+</body>
+
+</html>
